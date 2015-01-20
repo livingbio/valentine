@@ -1,0 +1,19 @@
+application: valentinetagtoo
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /dev
+  static_dir: app
+- url: /
+  static_dir: build
+- url: .*
+  script: main.app
+
+libraries:
+- name: jinja2
+  version: "2.6"
+- name: markupsafe
+  version: "0.15"

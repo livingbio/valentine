@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>遊戲說明</title>
+    <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.css">
+
+    <style type="text/css">
+    #wraper {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .input{
+        width: 100%;
+        margin: 2em 0;
+    }
+    .login {
+        text-align:center;
+    }
+    .flow {
+        display:none;
+    }
+    .flow .steps {
+        width: 100%;
+    }
+    #msg.msg, #link.link {
+        display:none;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wraper" class="ui compact segment">
+        <h1>周董昆凌英國大婚 自寫樂曲浪漫走紅毯</h1>
+
+        <p>周杰倫與昆凌在英國時間一月17日的下午，於英國Selby Abbey教堂舉辦婚禮，昆凌的父親牽著昆凌走紅毯，再將她的手交給周杰倫，在兩位牧師的見證下，兩人互換戒指，交換誓約，完成了終身大事！現場詩班演唱與弦樂隊演奏，加上親友的祝福，氣氛浪漫而喜悅！特別的是，有別於一般婚禮走紅毯時播放的結婚進行曲，周董為自己的婚禮寫了一首曲子(沒有命名)，再交由現場弦樂隊演奏，唯美弦樂的浪漫曲風，讓婚禮有了不同的情境！</p>
+        
+        <div class="ui horizontal divider">
+            start
+        </div>
+
+        <div class="login">
+            <div id="login" class="ui facebook button massive" onclick="VALENTINE.login();">
+                <i class="facebook icon"></i> 大聲告白
+            </div>
+        </div>
+
+        <div id="flow" class="flow">
+
+            <div class="ui ordered steps">
+                <div id="step1" class="active step">
+                    <div class="content">
+                        <div class="title">對誰告白</div>
+                        <div class="description">輸入你想要告白的對象</div>
+                    </div>
+                </div>
+                <div id="step2" class="disabled step">
+                    <div class="content">
+                        <div class="title">告白吧</div>
+                        <div class="description">輸入你想要告白的內容</div>
+                    </div>
+                </div>
+                <div id="step3" class="disabled step">
+                    <div class="content">
+                        <div class="title">恭喜</div>
+                        <div class="description">把連結分享給你的告白對象</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="name" class="ui left icon action input name">
+                <i class="user icon"></i>
+                <input type="text" placeholder="你要告白的對象名稱">
+                <div class="ui blue submit button">確認</div>
+            </div>
+            <div id="msg" class="ui left icon action input msg">
+                <i class="smile icon"></i>
+                <input type="text" placeholder="你要告白的內容">
+                <div class="ui blue submit button">確認</div>
+            </div>
+            <div id="link" class="ui action input link">
+                <input type="text" value="http://ww.short.url/c0opq">
+                <div class="ui blue submit button">copy</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
+
+    <script type="text/javascript"> 
+    var VALENTINE = {
+        num: 0,
+
+        login: function () {
+            FB.login(function(response) {
+
+                if (response.authResponse) {
+                    console.log('Welcome!  Fetching your information.... ');
+                    //console.log(response); // dump complete info
+                    access_token = response.authResponse.accessToken; //get access token
+                    user_id = response.authResponse.userID; //get FB UID
+
+                    FB.api('/me', function(response) {
+                        user_email = response.email; //get user email
+                        console.log(response)
+                        console.log('Successful login for: ' + response.name);
+                        // you can store this data into your database     
+                        VALENTINE.display();        
+                    });
+                    FB.api('/me/picture?width=100', function(response) {
+                        user_email = response.email; //get user email
+                        console.log(response.data.url)
+                            // console.log('Successful login for: ' + response.name);
+                            // you can store this data into your database
+                        VALENTINE.display();             
+                    });
+
+
+
+                } else {
+                    //user hit cancel button
+                    console.log('User cancelled login or did not fully authorize.');
+
+                }
+            }, {
+                scope: 'publish_stream,email,user_about_me,user_photos'
+            });
+        },
+
+
+        display: function () {
+            VALENTINE.num+=1;
+
+            if(VALENTINE.num == 2) {
+                $('#login').css('display','none');
+                $('#flow').css('display','block');
+            }
+        },
+
+        finish: function (obj, o) {
+            $(obj).removeClass('active').addClass('completed');
+            $(o).css('display','none');
+        },
+
+        start: function (obj, o) {
+            $(obj).removeClass('disabled').addClass('active');
+            $(o).css('display','table');
+        },
+
+        nameConfirm: function (event) {
+            console.log(event)
+            // if(event.type == 'click' || event.which == 13 ) {            
+                var name = $('#name input').val();
+                var a = confirm("確定要告白的對象叫做『" + name + "』");
+
+                if (a) {
+                    VALENTINE.finish('#step1', '#name');
+                    VALENTINE.start('#step2', '#msg');
+                } else {
+                    return false
+                }
+            // }
+        },
+
+        msgConfirm: function () {
+            // if(event.type == 'click' || event.which == 13 ) {
+                var msg = $('#msg input').val();
+                var a = confirm("確定要告白的內容是『" + msg + "』");
+
+                if (a) {
+                    VALENTINE.finish('#step2', '#msg');
+                    VALENTINE.start('#step3', '#link');
+                } else {
+                    return false
+                }
+            // }
+        },
+
+        copy: function () {
+            // if(event.type == 'click' || event.which == 13 ) {
+                $('#step3').removeClass('active').addClass('completed');
+            // }
+        }
+    }
+    
+    $( "#name" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.nameConfirm(); } });
+    $( "#msg" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.msgConfirm(); } });
+    $( "#link" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.copy(); } });
+
+    $( "#name .button" ).on({
+        click: VALENTINE.nameConfirm,
+        keypress: VALENTINE.nameConfirm
+    });
+
+    $( "#msg .button" ).on({
+        click: VALENTINE.msgConfirm,
+        keypress: VALENTINE.msgConfirm
+    });
+
+    $( "#link .button" ).on({
+        click: VALENTINE.copy,
+        keypress: VALENTINE.copy
+    });
+
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '776675399034344',
+            cookie: true, // enable cookies to allow the server to access 
+            // the session
+            xfbml: true, // parse social plugins on this page
+            version: 'v2.1' // use version 2.1
+        });
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+
+</html>
