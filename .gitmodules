@@ -1,0 +1,3 @@
+[submodule "node_modules/Tagtoo_tools"]
+	path = node_modules/Tagtoo_tools
+	url = git@github.com:Tagtoo/Tagtoo_tools.git
