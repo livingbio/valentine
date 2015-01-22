@@ -22,7 +22,8 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
-    <script src="../node_modules/Tagoo_tools/libs/cookie.js"></script>
+    <script src="/libs/cookie.js"></script>
+    <script src="/libs/core.js"></script>
     <script>
     var VALENTINE = {
         num: 0,
@@ -32,7 +33,8 @@
         name: undefined,
 
         init: function () {
-            $.get(this.resourse, function(data,status){
+            this.id = Tagtoo.Core.decodeQueryData(document.location.href).id;
+            $.get(this.resourse + '/' + this.id, function(data,status){
                 console.log("Data: " + data + "\nStatus: " + status);
             });
         },
