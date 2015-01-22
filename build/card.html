@@ -5,12 +5,155 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>告白卡片</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.css">
+
 </head>
 <body>
+    
+    <h1>情人節網路告白大行動 Happy Valentine’s Day</h1>
+    <p>Hello “被告白人名字” 你收到了 “告白人的名字” 送你的一段情人節秘密告白，你可以到以下幾個網站去逛逛看有什麼驚喜內容喲：聯合報、今日新聞、中國時報、自由時報，廣告實際出現位置，可以參考示意圖，或是直接點圖片連結過去。</p>
+    <p>備註：</p>
+
+    <ul>
+        <li>- 此活動並不支援行動裝置，建議使用電腦去尋找你的神秘告白內容喲</li>
+        <li>- 這是專屬于你的秘秘告白，只有在這台電腦上才看的到，廣告將會投放到2/14情人節當天為止，期間如果你想終止廣告，可以到http://www.tagtoo.com.tw/opt-out 移除設定</li>
+    </ul>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
+    <script src="../node_modules/Tagoo_tools/libs/cookie.js"></script>
     <script>
-$.get("demo_test.asp",function(data,status){
-    alert("Data: " + data + "\nStatus: " + status);
-  });
+    var VALENTINE = {
+        num: 0,
+        resourse: "/api/valentineinfo",
+        id: undefined,
+        photo: undefined,
+        name: undefined,
+
+        init: function () {
+            $.get(this.resourse, function(data,status){
+                console.log("Data: " + data + "\nStatus: " + status);
+            });
+        },
+
+        login: function () {
+
+            var that = this;
+
+            FB.login(function(response) {
+
+                if (response.authResponse) {
+
+                    console.log('Welcome!  Fetching your information.... ');
+                    //console.log(response); // dump complete info
+                    access_token = response.authResponse.accessToken; //get access token
+                    user_id = response.authResponse.userID; //get FB UID
+
+                    FB.api('/me', function(response) {
+                        console.log('Successful login for: ' + response.name);
+                        that.name = response.name;
+                        that.display();        
+                    });
+
+                    FB.api('/me/picture?width=100', function(response) {
+                        that.photo = response.data.url;
+                        that.display();             
+                    });
+
+                } else {
+                    //user hit cancel button
+                    console.log('User cancelled login or did not fully authorize.');
+
+                }
+
+            }, {
+                scope: 'publish_stream,email,user_about_me,user_photos'
+            });
+        },
+
+
+        display: function () {
+
+            this.num+=1;
+
+            if(this.num == 2) {
+                $('#login').css('display','none');
+                $('#flow').css('display','block');
+            }
+        },
+
+        finish: function (obj, o) {
+            $(obj).removeClass('active').addClass('completed');
+            $(o).css('display','none');
+        },
+
+        start: function (obj, o) {
+            $(obj).removeClass('disabled').addClass('active');
+            $(o).css('display','table');
+        },
+
+        nameConfirm: function (event) {
+            // if(event.type == 'click' || event.which == 13 ) {            
+                var name = $('#name input').val();
+                var a = confirm("確定要告白的對象叫做『" + name + "』");
+
+                if (a) {
+                    VALENTINE.finish('#step1', '#name');
+                    VALENTINE.start('#step2', '#msg');
+                } else {
+                    return false
+                }
+            // }
+        },
+
+        msgConfirm: function () {
+            // if(event.type == 'click' || event.which == 13 ) {
+                var msg = $('#msg input').val();
+                var a = confirm("確定要告白的內容是『" + msg + "』");
+
+                if (a) {
+                    VALENTINE.finish('#step2', '#msg');
+                    VALENTINE.start('#step3', '#link');
+                    VALENTINE.submit();
+                } else {
+                    return false
+                }
+            // }
+        },
+
+        copy: function () {
+            // if(event.type == 'click' || event.which == 13 ) {
+                $('#step3').removeClass('active').addClass('completed');
+            // }
+        },
+
+        submit: function () {
+
+            var that = this;
+            var $name = $('#name input').val();
+            var $msg = $('#msg input').val();
+            var $input = $('#link input');
+            var obj = {
+                name: this.name,
+                photo: this.photo,
+                who: $name,
+                commit: $msg
+            };
+
+            $.post(this.resourse, obj, function(data,status){
+                var data = JSON.parse(data);
+                that.id = data.id;
+                $input.val(document.location.host + '/card.html?id=' + that.id);
+            });
+
+        } 
+    }
+
+    $(function(){
+        VALENTINE.init();
+    });
+
     </script>
 </body>
 </html>
