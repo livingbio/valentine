@@ -13,5 +13,5 @@ class ValentineInfo(ndb.Model):
     name = ndb.StringProperty(indexed=False)
     photo = ndb.StringProperty(indexed=False)
     who = ndb.StringProperty(indexed=False)
-    comment = ndb.StringProperty(indexed=False)
+    commit = ndb.StringProperty(indexed=False)
 
