@@ -8,10 +8,13 @@ builtins:
 - remote_api: on
 
 handlers:
+
+- url: /libs
+  static_dir: node_modules/Tagtoo_tools/libs
+
 - url: /game.html
   static_files: build/game.html
   upload: build/game.html
-
 
 - url: /card.html
   static_files: build/card.html
