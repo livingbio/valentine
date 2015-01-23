@@ -9,6 +9,9 @@ builtins:
 
 handlers:
 
+- url: /semantic
+  static_dir: node_modules/semantic-ui/dist
+
 - url: /libs
   static_dir: node_modules/Tagtoo_tools/libs
 

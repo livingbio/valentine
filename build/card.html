@@ -6,22 +6,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>告白卡片</title>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
 
+    <style type="text/css">
+    #wraper {
+        width: 80%;
+        margin: 0 auto;
+        box-shadow: 0 0 0 0;
+        height: 100%;
+    }
+    .input{
+        width: 100%;
+        margin: 2em 0;
+    }
+    .login {
+        text-align:center;
+    }
+    .flow {
+        display:none;
+    }
+    .flow .steps {
+        width: 100%;
+    }
+    #msg.msg, #link.link {
+        display:none;
+    }
+
+    body {
+        background-image: url('http://lh5.ggpht.com/LiPAfqM1Gh8tPkXieRNnbdZLO3NfAf4-WykbHHeH784bgg54wPLAArvR-lkr4gK7GudzEDnd_56sd1PtdDXneA');
+    }
+
+    .logo {
+        background-image: url('http://lh4.ggpht.com/BHbINrjedbJUmPHbpvop_4yFbALLYqttydPRldxaG7KAPVbuH-zr8vqnoDe2s-RZVYm7ApeyocDdu1zhLuei');
+        width: 140px;
+        height: 117px;
+        margin: 50px auto 50px auto;
+    }
+
+    .top {
+        background-image: url('http://lh6.ggpht.com/xALp50QCRtJ-PfP1gSsHnYc999fgFbVgTxqsVNR-4sNVekDw_xvWjbZGXHDOyhgcrdwN1J_audAeB-EbcSQj');
+        width: 100%;
+        height: 20px;
+    }
+
+    .bottom {
+        text-align: center;
+        widows: 100%;
+        height: 50px;
+        background-color: #EDEDED;
+    }
+
+    .bottom p {
+        line-height: 50px;
+    }
+
+    ul {
+        list-style-type:none;
+        padding: 0;
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 20px;
+        color: #BA8A68;
+        line-height: 30px;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+
+    iframe {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .flow-wraper {
+        margin: 50px;
+    }
+    </style>
+    <style>
+    img {
+        width: 100%;
+    }
+    </style>
 </head>
 <body>
-    
-    <h1>情人節網路告白大行動 Happy Valentine’s Day</h1>
-    <p>Hello “被告白人名字” 你收到了 “告白人的名字” 送你的一段情人節秘密告白，你可以到以下幾個網站去逛逛看有什麼驚喜內容喲：聯合報、今日新聞、中國時報、自由時報，廣告實際出現位置，可以參考示意圖，或是直接點圖片連結過去。</p>
+ 
+    <div class="top"></div>
+
+    <div id="wraper" class="ui compact segment">
+        <div class="logo"></div>
+        <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
+          <div class="ui page grid">
+            <div class="column">
+              <h2 class="ui inverted header">情人節網路告白大行動 Happy Valentine’s Day</h2>
+              <p>Hello <span id="receiver"></span> 你收到了 <span id="emitter"></span> 送你的一段情人節秘密告白，你可以到以下幾個網站去逛逛看有什麼驚喜內容喲：聯合報、今日新聞、中國時報、自由時報，廣告實際出現位置，可以參考示意圖，或是直接點圖片連結過去。</p>
     <p>備註：</p>
+            </div>
+          </div>
+        </div>
 
-    <ul>
-        <li>- 此活動並不支援行動裝置，建議使用電腦去尋找你的神秘告白內容喲</li>
-        <li>- 這是專屬于你的秘秘告白，只有在這台電腦上才看的到，廣告將會投放到2/14情人節當天為止，期間如果你想終止廣告，可以到http://www.tagtoo.com.tw/opt-out 移除設定</li>
-    </ul>
+        <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
+          <div class="ui page grid">
+            <div class="sixteen wide column">
+                <ul>
+                    <li>- 此活動並不支援行動裝置，建議使用電腦去尋找你的神秘告白內容喲</li>
+                    <li>- 這是專屬于你的秘秘告白，只有在這台電腦上才看的到，廣告將會投放到2/14情人節當天為止，期間如果你想終止廣告，可以到http://www.tagtoo.com.tw/opt-out 移除設定</li>
+                </ul>
+            </div>
+          </div>
+        </div>
 
+        <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
+          <div class="ui page grid">
+            <div class="ui horizontal divider">
+                告白廣告示意圖
+            </div>
+            <div class="sixteen wide column">
+                <h2>聯合報</h2>
+                <img src="http://lh6.ggpht.com/PTzXSB8mLVdDG6SdLyflVPjgM0RPZBvm4gylfUk6tBOukcIksxNapn1OhDbxi4dypcHCRI3OTyPioFzLhK7AAw=w1000" alt="">
+                
+                <h2>今日新聞</h2>
+                <img src="http://lh6.ggpht.com/PTzXSB8mLVdDG6SdLyflVPjgM0RPZBvm4gylfUk6tBOukcIksxNapn1OhDbxi4dypcHCRI3OTyPioFzLhK7AAw=w1000" alt="">
+                
+                <h2>中國時報</h2>
+                <img src="http://lh6.ggpht.com/PTzXSB8mLVdDG6SdLyflVPjgM0RPZBvm4gylfUk6tBOukcIksxNapn1OhDbxi4dypcHCRI3OTyPioFzLhK7AAw=w1000" alt="">
+
+                <h2>自由時報</h2>
+                <img src="http://lh6.ggpht.com/PTzXSB8mLVdDG6SdLyflVPjgM0RPZBvm4gylfUk6tBOukcIksxNapn1OhDbxi4dypcHCRI3OTyPioFzLhK7AAw=w1000" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom">
+            <p>copyright tagtoo 2015</p>
+        </div>
+    </div>
+    
+    <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
+    <script src="/semantic/semantic.min.js"></script>
     <script src="/libs/cookie.js"></script>
     <script src="/libs/core.js"></script>
     <script>
@@ -34,123 +159,55 @@
 
         init: function () {
             this.id = Tagtoo.Core.decodeQueryData(document.location.href).id;
-            $.get(this.resourse + '/' + this.id, function(data,status){
-                console.log("Data: " + data + "\nStatus: " + status);
-            });
+
+            this.cookie();
+
+            // $.get(this.resourse + '/' + this.id, function(data,status){
+            //     console.log("Data: " + data + "\nStatus: " + status);
+            //     $('#receiver').text();
+            //     $('#emitter').text();
+                
+            // });
+
         },
-
-        login: function () {
-
-            var that = this;
-
-            FB.login(function(response) {
-
-                if (response.authResponse) {
-
-                    console.log('Welcome!  Fetching your information.... ');
-                    //console.log(response); // dump complete info
-                    access_token = response.authResponse.accessToken; //get access token
-                    user_id = response.authResponse.userID; //get FB UID
-
-                    FB.api('/me', function(response) {
-                        console.log('Successful login for: ' + response.name);
-                        that.name = response.name;
-                        that.display();        
-                    });
-
-                    FB.api('/me/picture?width=100', function(response) {
-                        that.photo = response.data.url;
-                        that.display();             
-                    });
-
-                } else {
-                    //user hit cancel button
-                    console.log('User cancelled login or did not fully authorize.');
-
-                }
-
-            }, {
-                scope: 'publish_stream,email,user_about_me,user_photos'
-            });
-        },
-
-
-        display: function () {
-
-            this.num+=1;
-
-            if(this.num == 2) {
-                $('#login').css('display','none');
-                $('#flow').css('display','block');
+  
+        cookie: function () {
+            if(typeof Tagtoo.Cookie.getItem("tags") === 'undefined') {
+                Tagtoo.Cookie.setItem("tags","valentine");
             }
-        },
 
-        finish: function (obj, o) {
-            $(obj).removeClass('active').addClass('completed');
-            $(o).css('display','none');
-        },
+            if(typeof Tagtoo.Cookie.getItem("valentine_ids") === 'undefined') {
+                var arr = [];
+                arr.push(this.id)
+                var str = JSON.stringify(arr);
+                Tagtoo.Cookie.setItem("valentine_ids", str);
+            } else {
+                // 如果有同樣就不塞
+                
+                var ids = JSON.parse(Tagtoo.Cookie.getItem("valentine_ids"));
+                
+                for (var i = 0; i < ids; i++) {
+                    if(ids[i] == this.id) {
+                        return false
+                    }
+                };
+                
+                // 直接 push 
+                ids.push(this.id);
+                ids = JSON.stringify(ids);
+                Tagtoo.Cookie.setItem("valentine_ids", ids);
+            }
+        }
 
-        start: function (obj, o) {
-            $(obj).removeClass('disabled').addClass('active');
-            $(o).css('display','table');
-        },
-
-        nameConfirm: function (event) {
-            // if(event.type == 'click' || event.which == 13 ) {            
-                var name = $('#name input').val();
-                var a = confirm("確定要告白的對象叫做『" + name + "』");
-
-                if (a) {
-                    VALENTINE.finish('#step1', '#name');
-                    VALENTINE.start('#step2', '#msg');
-                } else {
-                    return false
-                }
-            // }
-        },
-
-        msgConfirm: function () {
-            // if(event.type == 'click' || event.which == 13 ) {
-                var msg = $('#msg input').val();
-                var a = confirm("確定要告白的內容是『" + msg + "』");
-
-                if (a) {
-                    VALENTINE.finish('#step2', '#msg');
-                    VALENTINE.start('#step3', '#link');
-                    VALENTINE.submit();
-                } else {
-                    return false
-                }
-            // }
-        },
-
-        copy: function () {
-            // if(event.type == 'click' || event.which == 13 ) {
-                $('#step3').removeClass('active').addClass('completed');
-            // }
-        },
-
-        submit: function () {
-
-            var that = this;
-            var $name = $('#name input').val();
-            var $msg = $('#msg input').val();
-            var $input = $('#link input');
-            var obj = {
-                name: this.name,
-                photo: this.photo,
-                who: $name,
-                commit: $msg
-            };
-
-            $.post(this.resourse, obj, function(data,status){
-                var data = JSON.parse(data);
-                that.id = data.id;
-                $input.val(document.location.host + '/card.html?id=' + that.id);
-            });
-
-        } 
     }
+
+    // var tagtoo_advertiser_id = 251;
+    // var tagtoo_ga = document.createElement('script');
+    // tagtoo_ga.type = 'text/javascript';
+    // tagtoo_ga.async = true;
+    // tagtoo_ga.src = '//ad.tagtoo.co/media/ad/track.js';
+    // var tagtoo_s = document.getElementsByTagName('script')[0];
+    // tagtoo_s.parentNode.insertBefore(tagtoo_ga, tagtoo_s);
 
     $(function(){
         VALENTINE.init();
