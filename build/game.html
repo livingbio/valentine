@@ -335,7 +335,8 @@
                 name: this.name,
                 photo: this.photo,
                 who: $name,
-                commit: $msg
+                commit: $msg,
+                id: this.fbid
             };
 
             $.post(this.resourse, obj, function(data,status){

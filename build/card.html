@@ -181,8 +181,9 @@
             $.get(src, function(data,status){
                 console.log("Data: " + data + "\nStatus: " + status);
                 data = JSON.parse(data);
-
+                console.log(data)
                 var url = "https://www.facebook.com/" + data.id;
+                console.log(url)
                 $('#receiver').html(data.who);
                 $('#emitter').html(data.name);
                 $('#emitter-a').attr('href',url)
@@ -191,6 +192,7 @@
         },
   
         cookie: function () {
+            console.log("cookie")
             if(typeof Tagtoo.Cookie.getItem("tags") === 'undefined') {
                 Tagtoo.Cookie.setItem("tags","valentine");
             }
@@ -205,7 +207,8 @@
                 
                 var ids = JSON.parse(Tagtoo.Cookie.getItem("valentine_ids"));
                 
-                for (var i = 0; i < ids; i++) {
+                for (var i = 0; i < ids.length; i++) {
+                    console.log(i)
                     if(ids[i] == this.id) {
                         return false
                     }
