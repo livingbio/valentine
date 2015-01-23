@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>情人節網路告白大行動</title>
-    <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="情人節又要到了，每個人心中一定有個特別人，如果你有段話想對她、他說，但又有不知道如何開口，交給我們來幫你吧。" />
+    
+    <title>情人節網路告白大行動</title>
 
+    <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.css">
 
     <style type="text/css">
@@ -100,7 +101,10 @@
           <div class="ui page grid">
             <div class="column">
               <h2 class="ui inverted header">Full Width Heading</h2>
-              <p>情人節又要到了，每個人心中一定有個特別人，如果你有段話想對她、他說，但又有不知道如何開口，交給我們來幫你吧。只要依照以下步驟，先登入臉書帳號，再輸入告白對象暱稱，並寫下一段你想對她說的話，系統會自動產出一個短網址。你只要把產出網址丟給你想要告白的對象，我們就會把你的告白內容做成網路廣告並投放給你告白對象！重點是，這段秘密對話，只有點連結的那個人看的到，其他人是看不到的喔。適用對象：不管是暗戀、單戀、情人、男男、女女、還是老夫老妻，只要你想給某人一個不一樣的情人節禮物，都可以免費參加遊戲。</p>
+              <p>情人節又要到了，每個人心中一定有個特別人，如果你有段話想對她、他說，但又有不知道如何開口，交給我們來幫你吧。只要依照以下步驟，先登入臉書帳號，再輸入告白對象暱稱，並寫下一段你想對她說的話，系統會自動產出一個短網址。</p>
+
+              <p>你只要把產出網址丟給你想要告白的對象，我們就會把你的告白內容做成網路廣告並投放給你告白對象！</p>
+              <p>重點是，這段秘密對話，只有點連結的那個人看的到，其他人是看不到的喔。適用對象：不管是暗戀、單戀、情人、男男、女女、還是老夫老妻，只要你想給某人一個不一樣的情人節禮物，都可以免費參加遊戲。</p>
             </div>
           </div>
         </div>
@@ -112,7 +116,7 @@
                     <li>- 活動期間：即日起到情人節當天為止 (2/14/2015)。</li>
                     <li>- 活動要求：要特別告訴告白對象，點短網址的時候要在桌機上喔，目前活動並不支援行動裝置。</li>
                     <li>- 特別提示：如果想要傳給多個對象，每次都要產生新的網址喔，要不然後果可能會難以想像。</li>
-                    <li>- 備註：此活動由塔圖科技贊助，塔圖科技是一間提供精准廣告投遞的廣告技術公司，如果想了解更多關於廣告投放資訊，請造訪官網：www.tagtoo.com.tw</li>
+                    <li>- 備註：此活動由塔圖科技贊助，塔圖科技是一間提供精准廣告投遞的廣告技術公司，如果想了解更多關於廣告投放資訊，請造訪 <a href="http://www.tagtoo.com.tw">塔圖官方網站</a></li>
                 </ul>
             </div>
           </div>
@@ -124,19 +128,19 @@
                 告白廣告示意圖
             </div>
             <div class="sixteen wide column">
-                <h2>620x150</h2>
+                <h2>告白 A 版型</h2>
                 <iframe src="http://ad.tagtoo.co/ad/show/1669?a" frameborder="0" width="620" height="150" frameborder="0" scrolling="no"></iframe>
                 
-                <h2>300x250</h2>
+                <h2>告白 B 版型</h2>
                 <iframe src="http://ad.tagtoo.co/ad/show/1668?a" frameborder="0" width="300" height="250" frameborder="0" scrolling="no"></iframe>
             </div>
 
             <div class="eight wide column">
-                <h2>120x600</h2>
+                <h2>告白 C 版型</h2>
                 <iframe src="http://ad.tagtoo.co/ad/show/1670?a" frameborder="0" width="120" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
             <div class="eight wide column">
-                <h2>160x600</h2>
+                <h2>告白 D 版型</h2>
                 <iframe src="http://ad.tagtoo.co/ad/show/1671?A" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
           </div>
@@ -199,14 +203,15 @@
           </div>
         </div>
 
+
         <div class="bottom">
-            <p>copyright tagtoo 2015</p>
+            <p>copyright © <a href="http://www.tdagtoo.com.tw">Tagtoo 塔圖科技</a> 2015 <a href="http://www.tagtoo.com.tw/privacy">隱私權政策</a></p>
         </div>
     </div>
     
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="/static/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
     <script src="/static/ZeroClipboard.js"></script>
     <script type="text/javascript"> 
@@ -216,6 +221,8 @@
         id: undefined,
         photo: undefined,
         name: undefined,
+        fbid: undefined,
+        success: 0,
 
         login: function () {
 
@@ -231,8 +238,9 @@
                     user_id = response.authResponse.userID; //get FB UID
 
                     FB.api('/me', function(response) {
-                        console.log('Successful login for: ' + response.name);
+                        console.log('Successful login for: ' + response.id);
                         that.name = response.name;
+                        that.fbid = response.id;
                         that.display();        
                     });
 
@@ -285,6 +293,7 @@
                 if (a && validate) {
                     VALENTINE.finish('#step1', '#name');
                     VALENTINE.start('#step2', '#msg');
+                    $('#msg input').focus();
                 } else {
                     return false
                 }
@@ -349,13 +358,13 @@
         }
     }
     
-    var tagtoo_advertiser_id = 251;
-    var tagtoo_ga = document.createElement('script');
-    tagtoo_ga.type = 'text/javascript';
-    tagtoo_ga.async = true;
-    tagtoo_ga.src = '//ad.tagtoo.co/media/ad/track.js';
-    var tagtoo_s = document.getElementsByTagName('script')[0];
-    tagtoo_s.parentNode.insertBefore(tagtoo_ga, tagtoo_s);
+    // var tagtoo_advertiser_id = 251;
+    // var tagtoo_ga = document.createElement('script');
+    // tagtoo_ga.type = 'text/javascript';
+    // tagtoo_ga.async = true;
+    // tagtoo_ga.src = '//ad.tagtoo.co/media/ad/track.js';
+    // var tagtoo_s = document.getElementsByTagName('script')[0];
+    // tagtoo_s.parentNode.insertBefore(tagtoo_ga, tagtoo_s);
 
     window.fbAsyncInit = function() {
         FB.init({
@@ -396,6 +405,8 @@
             click: VALENTINE.copy,
             keypress: VALENTINE.copy
         });
+
+
 
         var client = new ZeroClipboard( document.getElementById("copy-button") );
 

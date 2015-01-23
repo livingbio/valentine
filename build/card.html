@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>告白卡片</title>
+    <meta name="description" content="情人節又要到了，每個人心中一定有個特別人，如果你有段話想對她、他說，但又有不知道如何開口，交給我們來幫你吧。" />
 
+    <title>情人節網路告白大行動</title>
+    
+    <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
 
     <style type="text/css">
@@ -89,6 +92,16 @@
     img {
         width: 100%;
     }
+    .receiver {
+        font-size: 30px;
+        color: #5F5F5F;
+        margin: 0 10px;
+    }
+    .emitter {
+        font-size: 30px;
+        color: #5F5F5F;
+        margin: 0 10px;
+    }
     </style>
 </head>
 <body>
@@ -101,7 +114,7 @@
           <div class="ui page grid">
             <div class="column">
               <h2 class="ui inverted header">情人節網路告白大行動 Happy Valentine’s Day</h2>
-              <p>Hello <span id="receiver"></span> 你收到了 <span id="emitter"></span> 送你的一段情人節秘密告白，你可以到以下幾個網站去逛逛看有什麼驚喜內容喲：聯合報、今日新聞、中國時報、自由時報，廣告實際出現位置，可以參考示意圖，或是直接點圖片連結過去。</p>
+              <p>Hello<span id="receiver" class="receiver"></span> 你收到了 <a id="emitter-a" href=""><span id="emitter" class="emitter"></span></a> 送你的一段情人節秘密告白，你可以到以下幾個網站去逛逛看有什麼驚喜內容喲：聯合報、今日新聞、中國時報、自由時報，廣告實際出現位置，可以參考示意圖，或是直接點圖片連結過去。</p>
     <p>備註：</p>
             </div>
           </div>
@@ -112,7 +125,7 @@
             <div class="sixteen wide column">
                 <ul>
                     <li>- 此活動並不支援行動裝置，建議使用電腦去尋找你的神秘告白內容喲</li>
-                    <li>- 這是專屬于你的秘秘告白，只有在這台電腦上才看的到，廣告將會投放到2/14情人節當天為止，期間如果你想終止廣告，可以到http://www.tagtoo.com.tw/opt-out 移除設定</li>
+                    <li>- 這是專屬于你的秘秘告白，只有在這台電腦上才看的到，廣告將會投放到2/14情人節當天為止，期間如果你想終止廣告，可以到 <a href="http://www.tagtoo.com.tw/opt-out">移除廣告</a>頁。</li>
                 </ul>
             </div>
           </div>
@@ -140,7 +153,7 @@
         </div>
 
         <div class="bottom">
-            <p>copyright tagtoo 2015</p>
+            <p>copyright © <a href="http://www.tdagtoo.com.tw">Tagtoo 塔圖科技</a> 2015 <a href="http://www.tagtoo.com.tw/privacy">隱私權政策</a></p>
         </div>
     </div>
     
@@ -156,18 +169,24 @@
         id: undefined,
         photo: undefined,
         name: undefined,
+        fbid: undefined,
 
         init: function () {
-            this.id = Tagtoo.Core.decodeQueryData(document.location.href).id;
+            this.id = Number(Tagtoo.Core.decodeQueryData(document.location.href).id);
 
             this.cookie();
 
-            // $.get(this.resourse + '/' + this.id, function(data,status){
-            //     console.log("Data: " + data + "\nStatus: " + status);
-            //     $('#receiver').text();
-            //     $('#emitter').text();
-                
-            // });
+            var src = document.location.origin + this.resourse + '/' + this.id;
+            console.log(src)
+            $.get(src, function(data,status){
+                console.log("Data: " + data + "\nStatus: " + status);
+                data = JSON.parse(data);
+
+                var url = "https://www.facebook.com/" + data.id;
+                $('#receiver').html(data.who);
+                $('#emitter').html(data.name);
+                $('#emitter-a').attr('href',url)
+            });
 
         },
   
