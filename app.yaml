@@ -9,6 +9,9 @@ builtins:
 
 handlers:
 
+- url: /static
+  static_dir: build/static
+
 - url: /semantic
   static_dir: node_modules/semantic-ui/dist
 

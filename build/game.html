@@ -125,19 +125,19 @@
             </div>
             <div class="sixteen wide column">
                 <h2>620x150</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1669" frameborder="0" width="620" height="150" frameborder="0" scrolling="no"></iframe>
+                <iframe src="http://ad.tagtoo.co/ad/show/1669?a" frameborder="0" width="620" height="150" frameborder="0" scrolling="no"></iframe>
                 
                 <h2>300x250</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1668" frameborder="0" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+                <iframe src="http://ad.tagtoo.co/ad/show/1668?a" frameborder="0" width="300" height="250" frameborder="0" scrolling="no"></iframe>
             </div>
 
             <div class="eight wide column">
                 <h2>120x600</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1670" frameborder="0" width="120" height="600" frameborder="0" scrolling="no"></iframe>
+                <iframe src="http://ad.tagtoo.co/ad/show/1670?a" frameborder="0" width="120" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
             <div class="eight wide column">
                 <h2>160x600</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1671" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+                <iframe src="http://ad.tagtoo.co/ad/show/1671?A" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
           </div>
         </div>
@@ -190,7 +190,7 @@
                         </div>
                         <div id="link" class="ui action input link">
                             <input type="text">
-                            <div class="ui blue submit button">copy</div>
+                            <div id="copy-button" class="ui blue submit button" data-clipboard-text="">copy</div>
                         </div>
 
                     </div>
@@ -208,7 +208,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
-
+    <script src="/static/ZeroClipboard.js"></script>
     <script type="text/javascript"> 
     var VALENTINE = {
         num: 0,
@@ -294,10 +294,10 @@
         msgConfirm: function () {
             // if(event.type == 'click' || event.which == 13 ) {
                 var msg = $('#msg input').val();
-                var a = confirm("確定要告白的內容是『" + msg + "』");
+                var validate = VALENTINE.validate(msg, 10, "告白對象暱稱不可以超過二十個字唷（英文不可以超過四十個字）!");
 
                 if (validate) {
-                    var validate = VALENTINE.validate(msg, 10, "告白對象暱稱不可以超過二十個字唷（英文不可以超過四十個字）!");
+                    var a = confirm("確定要告白的內容是『" + msg + "』");
                 }
 
                 if (a && validate) {
@@ -332,7 +332,9 @@
             $.post(this.resourse, obj, function(data,status){
                 var data = JSON.parse(data);
                 that.id = data.id;
-                $input.val(document.location.host + '/card.html?id=' + that.id);
+                var val = document.location.host + '/card.html?id=' + that.id;
+                console.log(val)
+                $input.val(val).attr('data-clipboard-text', val);
             });
 
         },
@@ -346,7 +348,6 @@
             }
         }
     }
-    
     
     var tagtoo_advertiser_id = 251;
     var tagtoo_ga = document.createElement('script');
@@ -376,25 +377,39 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
     
-    $( "#name" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.nameConfirm(); } });
-    $( "#msg" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.msgConfirm(); } });
-    $( "#link" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.copy(); } });
+    $(function(){
+        $( "#name" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.nameConfirm(); } });
+        $( "#msg" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.msgConfirm(); } });
+        $( "#link" ).keypress(function( event ) { if ( event.which == 13 ) { event.preventDefault(); VALENTINE.copy(); } });
 
-    $( "#name .button" ).on({
-        click: VALENTINE.nameConfirm,
-        keypress: VALENTINE.nameConfirm
+        $( "#name .button" ).on({
+            click: VALENTINE.nameConfirm,
+            keypress: VALENTINE.nameConfirm
+        });
+
+        $( "#msg .button" ).on({
+            click: VALENTINE.msgConfirm,
+            keypress: VALENTINE.msgConfirm
+        });
+
+        $( "#link .button" ).on({
+            click: VALENTINE.copy,
+            keypress: VALENTINE.copy
+        });
+
+        var client = new ZeroClipboard( document.getElementById("copy-button") );
+
+        client.on( "ready", function( readyEvent ) {
+          // alert( "ZeroClipboard SWF is ready!" );
+
+          client.on( "aftercopy", function( event ) {
+            // `this` === `client`
+            // `event.target` === the element that was clicked
+            // event.target.style.display = "none";  
+            alert("Copied text to clipboard: " + event.data["text/plain"] );
+          } );
+        } );
     });
-
-    $( "#msg .button" ).on({
-        click: VALENTINE.msgConfirm,
-        keypress: VALENTINE.msgConfirm
-    });
-
-    $( "#link .button" ).on({
-        click: VALENTINE.copy,
-        keypress: VALENTINE.copy
-    });
-
     </script>
 </body>
 
