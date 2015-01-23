@@ -28,6 +28,7 @@ class ValentineInfo(webapp2.RequestHandler):
         data['photo'] = self.request.get('photo')
         data['who'] = self.request.get('who')
         data['commit'] = self.request.get('commit')
+        data['id'] = self.request.get('id')
         info = models.ValentineInfo(**data)
         info.put()
         self.response.write(json.dumps({'id': info.key.id()}))
