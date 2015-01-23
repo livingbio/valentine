@@ -11,9 +11,16 @@ import json
 
 class ValentineInfo(webapp2.RequestHandler):
     def get(self, info_id):
+        callback = self.request.get('callback', "")
         info = models.ValentineInfo.get_by_id(int(info_id))
-        self.response.write(json.dumps(info.to_dict()))
+        data = json.dumps(info.to_dict())
+
+        if callback:
+            template = '{callback}({data})'
+        else:
+            template = '{data}'
     
+        self.response.write(template.format(**{"callback": callback, "data": data}))
 
     def post(self):
         data = {}
