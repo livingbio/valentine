@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>cookie</title>
+</head>
+<body>
+	<script src="/static/jquery.js"></script>
+	<script src="/libs/cookie.js"></script>
+	<script type="text/javascript">
+    var VALENTINE = {
+
+		cookie: undefined,
+
+		// src: 'http://ad.tagtoo.co/ad/show/1668',
+        src: 'http://127.0.0.1:8000/admin/campaign_preview/1668/?ModPagespeedFilters=&__t=',
+  
+        insertIframe: function (url) {
+            var src = url;
+            var iframe = document.createElement('iframe');
+            iframe.src = src;
+            iframe.width = 0;
+            iframe.height = 0;
+            var b = document.getElementsByTagName('body')[0];
+            b.appendChild(iframe);
+        },
+
+        init: function () {
+
+		    if(typeof Tagtoo.Cookie.getItem("tags") !== 'undefined' && typeof Tagtoo.Cookie.getItem("valentine_ids") !== 'undefined') {
+				this.cookie = Tagtoo.Cookie.getItem('valentine_ids');
+		    } else {
+		    	this.cookie = '';
+		    }
+
+			if(this.src.match(/\?/)) {
+				add = '&c=';
+			} else {
+				add = '?c=';
+			}
+
+			this.src += add + this.cookie;
+			// console.log(this.src)
+
+		    VALENTINE.insertIframe(this.src);  
+
+        }
+
+    }
+
+	// 1. 預先判斷 cookie 是否是情人節活動
+	// 必須要有情人節 tag 和 ids 才會顯示廣告
+	VALENTINE.init();
+	</script>
+</body>
+</html>

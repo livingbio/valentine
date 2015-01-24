@@ -26,6 +26,10 @@ handlers:
   static_files: build/card.html
   upload: build/card.html
 
+- url: /get.html
+  static_files: build/get.html
+  upload: build/get.html
+
 - url: .*
   script: main.app
 
