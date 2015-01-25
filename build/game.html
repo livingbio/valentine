@@ -82,11 +82,24 @@
     iframe {
         margin: 0 auto;
         display: block;
-        outline: 3px solid;
+        /*outline: 3px solid;*/
     }
 
     .flow-wraper {
-        margin: 50px;
+        max-width: 600px;
+        margin: 50px auto;
+    }
+
+
+    .fb-share-button {
+        position: absolute !important;
+        top: 10px;
+        right: 16px;
+    }
+    .fb-comments, .fb-like-box{
+        text-align: center;
+        display: block !important;
+        margin: 0 auto;
     }
     </style>
 
@@ -98,6 +111,7 @@
 
     <div id="wraper" class="ui compact segment">
         <div class="logo"></div>
+        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
         <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
           <div class="ui page grid">
             <div class="column">
@@ -119,6 +133,8 @@
                     <li>- 特別提示：如果想要傳給多個對象，每次都要產生新的網址喔，要不然後果可能會難以想像。</li>
                     <li>- 備註：此活動由塔圖科技贊助，塔圖科技是一間提供精准廣告投遞的廣告技術公司，如果想了解更多關於廣告投放資訊，請造訪 <a href="http://www.tagtoo.com.tw">塔圖官方網站</a></li>
                 </ul>
+                <div class="fb-like-box" data-href="https://www.facebook.com/TagtooFans" data-width="600" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+        
             </div>
           </div>
         </div>
@@ -197,14 +213,23 @@
                             <input type="text">
                             <div id="copy-button" class="ui blue submit button" data-clipboard-text="">copy</div>
                         </div>
-
+                        
                     </div>
+
                 </div>
             </div>
           </div>
         </div>
 
 
+        <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
+          <div class="ui page grid">
+            <div class="sixteen wide column">
+                <div class="fb-comments" data-href="https://www.facebook.com/TagtooFans" data-width="600" data-numposts="5" data-colorscheme="light"></div>
+            </div>
+          </div>
+        </div>
+        
         <div class="bottom">
             <p>copyright © <a href="http://www.tdagtoo.com.tw">Tagtoo 塔圖科技</a> 2015 <a href="http://www.tagtoo.com.tw/privacy">隱私權政策</a></p>
         </div>
