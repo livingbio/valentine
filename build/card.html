@@ -170,24 +170,29 @@
         photo: undefined,
         name: undefined,
         fbid: undefined,
+        src: undefined,
+        fake: {name: "周傑輪", commit: "哈摟", id: "72447883975", photo: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-x…gda__=1432520886_c51aedd561e607dbcc9167ff21ce0cb6", who: "親愛的昆霖"},
+
 
         init: function () {
-            this.id = Number(Tagtoo.Core.decodeQueryData(document.location.href).id);
 
-            this.cookie();
 
-            var src = document.location.origin + this.resourse + '/' + this.id;
-            console.log(src)
-            $.get(src, function(data,status){
-                console.log("Data: " + data + "\nStatus: " + status);
-                data = JSON.parse(data);
-                console.log(data)
-                var url = "https://www.facebook.com/" + data.id;
-                console.log(url)
-                $('#receiver').html(data.who);
-                $('#emitter').html(data.name);
-                $('#emitter-a').attr('href',url)
-            });
+            this.id = Tagtoo.Core.decodeQueryData(document.location.href).id;
+            this.id = (this.id) ? Number(this.id) : false;
+            
+            if(!this.id) {
+                this.assign(this.fake);
+            } else {
+                this.cookie();
+                this.src = document.location.origin + this.resourse + '/' + this.id;
+                $.get(this.src, function(data,status){
+                    console.log("Data: " + data + "\nStatus: " + status);
+                    data = JSON.parse(data);
+                    console.log(data)
+                    VALENTINE.assign(data);
+                });                
+            }
+
 
         },
   
@@ -208,7 +213,7 @@
                 var ids = JSON.parse(Tagtoo.Cookie.getItem("valentine_ids"));
                 
                 for (var i = 0; i < ids.length; i++) {
-                    console.log(i)
+                    // console.log(i)
                     if(ids[i] == this.id) {
                         return false
                     }
@@ -219,6 +224,14 @@
                 ids = JSON.stringify(ids);
                 Tagtoo.Cookie.setItem("valentine_ids", ids);
             }
+        },
+
+        assign: function (data) {
+            var url = "https://www.facebook.com/" + data.id;
+            console.log(url)
+            $('#receiver').html(data.who);
+            $('#emitter').html(data.name);
+            $('#emitter-a').attr('href',url);
         }
 
     }
