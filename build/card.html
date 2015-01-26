@@ -160,8 +160,8 @@
     <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="/valentine_semantic/semantic.min.js"></script>
-    <script src="/valentine_libs/cookie.js"></script>
-    <script src="/valentine_libs/core.js"></script>
+    <script src="//ad.tagtoo.co/static/ad/js/cookie.js"></script>
+    <script src="//ad.tagtoo.co/static/ad/js/core.js"></script>
     <script>
     var VALENTINE = {
         num: 0,
@@ -198,11 +198,11 @@
   
         cookie: function () {
             console.log("cookie")
-            if(typeof Tagtoo.Cookie.getItem("tags") === 'undefined') {
+            if(!Tagtoo.Cookie.getItem("tags")) {
                 Tagtoo.Cookie.setItem("tags","valentine");
             }
 
-            if(typeof Tagtoo.Cookie.getItem("valentine_ids") === 'undefined') {
+            if(!Tagtoo.Cookie.getItem("valentine_ids")) {
                 var arr = [];
                 arr.push(this.id)
                 var str = JSON.stringify(arr);
@@ -210,7 +210,7 @@
             } else {
                 // 如果有同樣就不塞
                 
-                var ids = JSON.parse(Tagtoo.Cookie.getItem("valentine_ids"));
+                var ids = JSON.parse(Tagtoo.Cookie.getItem("valentine_ids")) || [];
                 
                 for (var i = 0; i < ids.length; i++) {
                     // console.log(i)

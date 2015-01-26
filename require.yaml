@@ -17,9 +17,10 @@ handlers:
   upload: valentine/build/card.html
 
 - url: /valentine_get.html
-  static_files: build/get.html
-  upload: build/get.html
+  static_files: valentine/build/get.html
+  upload: valentine/build/get.html
 
 - url: /valentine/.*
-  script: main.app
+  script: valentine.main.app
+
 
