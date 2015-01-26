@@ -1,0 +1,40 @@
+application: valentinetagtoo
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+builtins:
+- remote_api: on
+
+handlers:
+
+- url: /valentine_static
+  static_dir: valentine/build/static
+
+- url: /valentine_semantic
+  static_dir: valentine/node_modules/semantic-ui/dist
+
+- url: /valentine_libs
+  static_dir: valentine/node_modules/Tagtoo_tools/libs
+
+- url: /game.html
+  static_files: valentine/build/game.html
+  upload: valentine/build/game.html
+
+- url: /card.html
+  static_files: valentine/build/card.html
+  upload: valentine/build/card.html
+
+- url: /get.html
+  static_files: build/get.html
+  upload: build/get.html
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: jinja2
+  version: "2.6"
+- name: markupsafe
+  version: "0.15"
