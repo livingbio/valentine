@@ -101,6 +101,10 @@
         display: block !important;
         margin: 0 auto;
     }
+
+    #ads iframe {
+        outline: 1px solid;
+    }
     </style>
 
 </head>
@@ -139,7 +143,7 @@
           </div>
         </div>
 
-        <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
+        <div id="ads" class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
           <div class="ui page grid">
             <div class="ui horizontal divider">
                 告白廣告示意圖
@@ -211,7 +215,7 @@
                         </div>
                         <div id="link" class="ui action input link">
                             <input type="text">
-                            <div id="copy-button" class="ui blue submit button" data-clipboard-text="">copy</div>
+                            <div id="copy-button" class="ui blue submit button" data-clipboard-text="Copy Me～～">copy</div>
                         </div>
                         
                     </div>
@@ -439,6 +443,12 @@
 
         client.on( "ready", function( readyEvent ) {
           // alert( "ZeroClipboard SWF is ready!" );
+
+            client.on( "copy", function (event) {
+              var clipboard = event.clipboardData;
+              var val = document.location.host + '/card.html?id=' + VALENTINE.id;
+              clipboard.setData("text/plain", val);
+            });
 
           client.on( "aftercopy", function( event ) {
             // `this` === `client`
