@@ -12,8 +12,8 @@ import os
 import views
 
 app = webapp2.WSGIApplication([
-    (r'/api/valentineinfo', views.ValentineInfo),
-    (r'/api/valentineinfo/(\d+)', views.ValentineInfo),
+    (r'/valentine/api/valentineinfo', views.ValentineInfo),
+    (r'/valentine/api/valentineinfo/(\d+)', views.ValentineInfo),
 ], debug=False)
 
 
