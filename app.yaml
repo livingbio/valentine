@@ -9,13 +9,13 @@ builtins:
 
 handlers:
 
-- url: /static
+- url: /valentine_static
   static_dir: build/static
 
-- url: /semantic
+- url: /valentine_semantic
   static_dir: node_modules/semantic-ui/dist
 
-- url: /libs
+- url: /valentine_libs
   static_dir: node_modules/Tagtoo_tools/libs
 
 - url: /game.html
