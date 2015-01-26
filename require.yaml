@@ -8,15 +8,15 @@ handlers:
 - url: /valentine_libs
   static_dir: valentine/node_modules/Tagtoo_tools/libs
 
-- url: /game.html
+- url: /valentine_game.html
   static_files: valentine/build/game.html
   upload: valentine/build/game.html
 
-- url: /card.html
+- url: /valentine_card.html
   static_files: valentine/build/card.html
   upload: valentine/build/card.html
 
-- url: /get.html
+- url: /valentine_get.html
   static_files: build/get.html
   upload: build/get.html
 

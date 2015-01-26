@@ -162,7 +162,7 @@
             </div>
             <div class="eight wide column">
                 <h2>告白 D 版型</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1671" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+                <iframe src="http://ad.tagtoo.co/ad/show/1671d" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
           </div>
         </div>
@@ -372,7 +372,7 @@
             $.post(this.resourse, obj, function(data,status){
                 var data = JSON.parse(data);
                 that.id = data.id;
-                var val = document.location.host + '/card.html?id=' + that.id;
+                var val = document.location.host + '/valentine_card.html?id=' + that.id;
                 console.log(val)
                 $input.val(val).attr('data-clipboard-text', val);
             });
@@ -446,7 +446,7 @@
 
             client.on( "copy", function (event) {
               var clipboard = event.clipboardData;
-              var val = document.location.host + '/card.html?id=' + VALENTINE.id;
+              var val = document.location.host + '/valentine_card.html?id=' + VALENTINE.id;
               clipboard.setData("text/plain", val);
             });
 
