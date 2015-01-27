@@ -29,7 +29,7 @@
 
         init: function () {
 
-		    if(typeof Tagtoo.Cookie.getItem("tags") !== 'undefined' && typeof Tagtoo.Cookie.getItem("valentine_ids") !== 'undefined') {
+		    if(Tagtoo.Cookie.getItem("tags") && Tagtoo.Cookie.getItem("valentine_ids")) {
 				this.cookie = Tagtoo.Cookie.getItem('valentine_ids');
 		    } else {
 		    	this.cookie = '';
