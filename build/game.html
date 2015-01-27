@@ -136,12 +136,21 @@
         background-size: 100%;
         margin-right: 5px;
     }
+
+    .title {
+        font-size: 16px;
+    }
     </style>
 
 </head>
 
 <body>
-
+<div class="ui inline cookie nag" style="position:fixed;border-radius:0px;">
+  <span class="title">
+    目前已有 <span id="num"></span> 個人告白成功!!! 快來告白吧~
+  </span>
+  <!--i class="close icon"></i-->
+</div>
     <div class="top"></div>
 
     <div id="wraper" class="ui compact segment">
@@ -418,6 +427,29 @@
             } else {
                 return true
             }
+        },
+
+        count: function () {
+            $.get("/valentine/api/valentinecount", {}, function(data,status){
+                console.log(data)
+                data = JSON.parse(data)
+                // data.count = 100; 
+                if(data.count > 0) {
+                    $('#num').text(data.count);
+
+                    $(window).scroll(function(){
+                        // console.log('捲動')
+                        var he = $('body').scrollTop();
+                        if(he > 200) {
+                            // $('.cookie.nag').nag('show');  
+                            $('.cookie.nag').show(0);          
+                        } else {
+                            $('.cookie.nag').hide(0);
+                            // $('.close').click() 
+                        }
+                    });
+                }
+            });
         }
     }
     
@@ -469,7 +501,7 @@
             keypress: VALENTINE.copy
         });
 
-
+        VALENTINE.count();
 
         var client = new ZeroClipboard( document.getElementById("copy-button") );
 
