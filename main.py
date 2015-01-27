@@ -14,6 +14,7 @@ import views
 app = webapp2.WSGIApplication([
     (r'/valentine/api/valentineinfo', views.ValentineInfo),
     (r'/valentine/api/valentineinfo/(\d+)', views.ValentineInfo),
+    (r'/valentine/api/valentinecount', views.ValentineInfoCount),
 ], debug=False)
 
 

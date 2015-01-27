@@ -8,6 +8,7 @@
 import webapp2
 import models 
 import json
+import cgi
 
 class ValentineInfo(webapp2.RequestHandler):
     def get(self, info_id):
@@ -24,11 +25,17 @@ class ValentineInfo(webapp2.RequestHandler):
 
     def post(self):
         data = {}
-        data['name'] = self.request.get('name')
-        data['photo'] = self.request.get('photo')
-        data['who'] = self.request.get('who')
-        data['commit'] = self.request.get('commit')
-        data['id'] = self.request.get('id')
-        info = models.ValentineInfo(**data)
-        info.put()
+        data['name'] = cgi.escape(self.request.get('name'))
+        data['photo'] = cgi.escape(self.request.get('photo'))
+        data['who'] = cgi.escape(self.request.get('who'))
+        data['commit'] = cgi.escape(self.request.get('commit'))
+        data['id'] = cgi.escape(self.request.get('id'))
+
+        info = models.ValentineInfo.create(data)
         self.response.write(json.dumps({'id': info.key.id()}))
+
+class ValentineInfoCount(webapp2.RequestHandler):
+    def get(self):
+        count = models.ValentineInfo.get_count()
+        self.response.write(json.dumps({'count': count}))
+        
