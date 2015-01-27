@@ -47,7 +47,7 @@
     }
 
     .top {
-        background-image: url('http://lh6.ggpht.com/xALp50QCRtJ-PfP1gSsHnYc999fgFbVgTxqsVNR-4sNVekDw_xvWjbZGXHDOyhgcrdwN1J_audAeB-EbcSQj');
+        background-image: url('http://lh4.ggpht.com/MNrKJzB8ZzRLvYEfW3abp02_3zJ5UY2eTqxzI42lv4kpkC7PEh-9hjCUl38tS6v3ngIjLpgU6ZWufZtQMBYPzw');
         width: 100%;
         height: 20px;
     }
@@ -56,11 +56,13 @@
         text-align: center;
         widows: 100%;
         height: 50px;
-        background-color: #EDEDED;
+        background-color: #FFB5B5;
     }
 
     .bottom p {
         line-height: 50px;
+        font-size: 12px;
+        color: #5A5A5A;
     }
 
     ul {
@@ -70,9 +72,9 @@
     }
 
     p {
-        font-size: 20px;
+        font-size: 25px;
         color: #BA8A68;
-        line-height: 30px;
+        line-height: 40px;
     }
     
     h2 {
@@ -102,6 +104,27 @@
         color: #5F5F5F;
         margin: 0 10px;
     }
+
+    .emitter:hover {
+        color: #2A2A2A;
+    }
+
+
+    .d {
+        background-image: url("http://lh6.ggpht.com/deeU1WCI-igqrL4J9a4xzMxbptvouvDs-2ZrJGpNCidX1i2-Gu4PHtRIcubzwRuZVVrG4PZIuVwXhVMuyt2vFg");
+        background-size: 100%;
+    }
+    .d div {
+        margin: 100px 50px 75px 50px;
+    }
+
+    .aimg {
+        margin-bottom: 100px;
+    }
+
+    .aimg h2 {
+        margin-bottom: 30px;
+    }
     </style>
 </head>
 <body>
@@ -112,51 +135,62 @@
         <div class="logo"></div>
         <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
           <div class="ui page grid">
-            <div class="column">
-              <h2 class="ui inverted header">情人節網路告白大行動 Happy Valentine’s Day</h2>
-              <p>Hello<span id="receiver" class="receiver"></span> 你收到了 <a id="emitter-a" href=""><span id="emitter" class="emitter"></span></a> 送你的一段情人節秘密告白，你可以到以下幾個網站去逛逛看有什麼驚喜內容喲：聯合報、今日新聞、中國時報、自由時報，廣告實際出現位置，可以參考示意圖，或是直接點圖片連結過去。</p>
-    <p>備註：</p>
+            <div class="column d">
+                <div>
+                <p>Hello =)<span id="receiver" class="receiver"></span> 你收到了 <a id="emitter-a" href=""><span id="emitter" class="emitter"></span></a> 送你的一段情人節秘密告白，你可以到以下幾個網站去逛逛看有什麼驚喜內容唷。</p>
+                </div>
             </div>
           </div>
         </div>
 
         <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
           <div class="ui page grid">
-            <div class="sixteen wide column">
-                <ul>
-                    <li>- 此活動並不支援行動裝置，建議使用電腦去尋找你的神秘告白內容喲</li>
-                    <li>- 這是專屬于你的秘秘告白，只有在這台電腦上才看的到，廣告將會投放到2/14情人節當天為止，期間如果你想終止廣告，可以到 <a href="http://www.tagtoo.com.tw/opt-out">移除廣告</a>頁。</li>
-                </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
-          <div class="ui page grid">
-            <div class="ui horizontal divider">
+            <div class="ui horizontal divider" style="font-size: 20px;">
                 告白廣告示意圖
             </div>
             <div class="sixteen wide column">
-                <h2>聯合報</h2>
-                <img src="http://lh4.ggpht.com/-THZWywDvWQwW9HsKwvw-5rEimso0va02-qabOsZCtj_4bkFheilIfYMBTX_jgv9BfKuxBttfGBsjeotZSx1zg=w1000" alt="">
-                
-                <h2>今日新聞</h2>
-                <img src="http://lh4.ggpht.com/L9zTuMDs7Lf7krQAKLwoG6w7r2NoTbarv3OcRfD687L4ZRfjafahikrdGMTTZRNMPp8LuKoLIh92pgc-R2UDtQ=w1000" alt="">
-                
-                <h2>中國時報</h2>
-                <img src="http://lh6.ggpht.com/t4WhyYEFAy83j2IA6vaJL1DxI5XMbdjTFXmfDEXJYx1FnU-2yRH1mSjskgRoZ6d05Rm4ilHfh02Hgn9qn_RaYg=w1000" alt="">
+                <div class="aimg">
+                    <h2>1. <a href="http://udn.com/news/index">聯合新聞網</a></h2>
+                    <a href="http://udn.com/news/story/7157/658260"><img src="http://lh4.ggpht.com/-THZWywDvWQwW9HsKwvw-5rEimso0va02-qabOsZCtj_4bkFheilIfYMBTX_jgv9BfKuxBttfGBsjeotZSx1zg=w1000" alt=""></a>
+                </div>
 
-                <h2>自由時報</h2>
-                <img src="http://lh6.ggpht.com/qQv8ywf7fY8uueUMNMHvnX8TaPSmb4p6cid-ajwullWi0O6SBZ_SMvCwNt54zX0RTBILHoMA46Q-hF16uOG3=w1000" alt="">
+                <div class="aimg">
+                    <h2>2. <a href="http://www.nownews.com/">今日新聞</a></h2>
+                    <a class="aimg" href="http://www.nownews.com/n/2015/01/17/1578435"><img src="http://lh4.ggpht.com/L9zTuMDs7Lf7krQAKLwoG6w7r2NoTbarv3OcRfD687L4ZRfjafahikrdGMTTZRNMPp8LuKoLIh92pgc-R2UDtQ=w1000" alt=""></a>
+                </div>
+
+                <div class="aimg">
+                    <h2>3. <a href="http://www.chinatimes.com/newspapers/2601">中時電子報</a></h2>
+                    <a class="aimg" href="http://www.chinatimes.com/realtimenews/20150123004467-260410"><img src="http://lh6.ggpht.com/t4WhyYEFAy83j2IA6vaJL1DxI5XMbdjTFXmfDEXJYx1FnU-2yRH1mSjskgRoZ6d05Rm4ilHfh02Hgn9qn_RaYg=w1000" alt=""></a>
+                </div>
+
+                <div class="aimg">
+                    <h2>4. <a href="http://www.ltn.com.tw/">自由時報電子報</a></h2>
+                    <a class="aimg" href="http://news.ltn.com.tw/news/entertainment/breakingnews/1215389"><img src="http://lh6.ggpht.com/qQv8ywf7fY8uueUMNMHvnX8TaPSmb4p6cid-ajwullWi0O6SBZ_SMvCwNt54zX0RTBILHoMA46Q-hF16uOG3=w1000" alt=""></a>
+                </div>
             </div>
           </div>
         </div>
 
-        <div class="bottom">
-            <p>copyright © <a href="http://www.tdagtoo.com.tw">Tagtoo 塔圖科技</a> 2015 <a href="http://www.tagtoo.com.tw/privacy">隱私權政策</a></p>
+        <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
+          <div class="ui page grid">
+            <div class="sixteen wide column">
+                <h3>備註：</h3 >
+                <ul>
+                    <li>1. 此活動並不支援行動裝置，建議使用電腦去尋找你的神秘告白內容唷。</li>
+                    <li>2. 這是專屬于你的秘秘告白，只有在這台電腦上才看的到，廣告將會投放到2/14情人節當天為止。</li>
+                </ul>
+                <div id="delete_ad" class="negative ui button">點選我不想看到告白留言</div>
+            </div>
+          </div>
         </div>
+
     </div>
-    
+
+    <div class="bottom">
+        <p>© 2015 <a href="http://www.tdagtoo.com.tw" style="margin: 5px;">Tagtoo 塔圖科技</a> All copyright <a href="http://www.tagtoo.com.tw/privacy" style="margin: 5px;">隱私權政策</a></p>
+    </div>
+
     <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="/valentine_semantic/semantic.min.js"></script>
@@ -236,16 +270,26 @@
 
     }
 
-    // var tagtoo_advertiser_id = 251;
-    // var tagtoo_ga = document.createElement('script');
-    // tagtoo_ga.type = 'text/javascript';
-    // tagtoo_ga.async = true;
-    // tagtoo_ga.src = '//ad.tagtoo.co/media/ad/track.js';
-    // var tagtoo_s = document.getElementsByTagName('script')[0];
-    // tagtoo_s.parentNode.insertBefore(tagtoo_ga, tagtoo_s);
+    var tagtoo_advertiser_id = 251;
+    var tagtoo_ga = document.createElement('script');
+    tagtoo_ga.type = 'text/javascript';
+    tagtoo_ga.async = true;
+    tagtoo_ga.src = '//ad.tagtoo.co/media/ad/track.js';
+    var tagtoo_s = document.getElementsByTagName('script')[0];
+    tagtoo_s.parentNode.insertBefore(tagtoo_ga, tagtoo_s);
 
     $(function(){
         VALENTINE.init();
+        $('#delete_ad').click(function(){
+            var ans = confirm("確定不想再看到告白留言?");
+            if (ans) {
+                console.log('刪除')
+                Tagtoo.Cookie.setItem('tags','');
+                Tagtoo.Cookie.setItem('valentine_ids','[]');
+            } else {
+                return false
+            }
+        });
     });
 
     </script>
