@@ -315,7 +315,7 @@
                         that.display();        
                     });
 
-                    FB.api('/me/picture?width=200', function(response) {
+                    FB.api('/me/picture?width=200&height=200', function(response) {
                         that.photo = response.data.url;
                         that.display();             
                     });
