@@ -232,9 +232,9 @@
                 this.cookie();
                 this.src = document.location.origin + this.resourse + '/' + this.id;
                 $.get(this.src, function(data,status){
-                    console.log("Data: " + data + "\nStatus: " + status);
+                    // console.log("Data: " + data + "\nStatus: " + status);
                     data = JSON.parse(data);
-                    console.log(data)
+                    // console.log(data)
                     VALENTINE.assign(data);
                 });                
             }
@@ -243,7 +243,7 @@
         },
   
         cookie: function () {
-            console.log("cookie")
+            // console.log("cookie")
             if(!Tagtoo.Cookie.getItem("tags")) {
                 Tagtoo.Cookie.setItem("tags","valentine");
             }
@@ -274,7 +274,7 @@
 
         assign: function (data) {
             var url = "https://www.facebook.com/" + data.id;
-            console.log(url)
+            // console.log(url)
             $('#receiver').html(data.who);
             $('#emitter').html(data.name);
             $('#emitter-a').attr('href',url);
@@ -295,7 +295,7 @@
         $('#delete_ad').click(function(){
             var ans = confirm("確定不想再看到告白留言?");
             if (ans) {
-                console.log('刪除')
+                // console.log('刪除')
                 Tagtoo.Cookie.setItem('tags','');
                 Tagtoo.Cookie.setItem('valentine_ids','[]');
             } else {

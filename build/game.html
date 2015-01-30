@@ -7,7 +7,7 @@
     <meta name="description" content="情人節又要到了，每個人心中一定有個特別人，如果你有段話想對她、他說，但又有不知道如何開口，讓我們來幫你吧。" />
    
     <meta property="og:title" content="情人節網路告白大行動" />
-    <meta property="og:image" content="http://lh5.ggpht.com/4cuZC0E0CZC3cF9RqALNKWDaCNvHHYqQ6CrA1EcQtMxLr6PNMxCZ9Sp5g7rc35G8Tv58kejfAyUmEHxXvtQmddk=w158" />
+    <meta property="og:image" content="http://lh5.ggpht.com/4cuZC0E0CZC3cF9RqALNKWDaCNvHHYqQ6CrA1EcQtMxLr6PNMxCZ9Sp5g7rc35G8Tv58kejfAyUmEHxXvtQmddk=w200" />
     <meta property="og:url" content="http://ad.tagtoo.co/valentine_game.html" />
     <meta property="og:description" content="情人節又要到了，每個人心中一定有個特別人，如果你有段話想對她、他說，但又有不知道如何開口，讓我們來幫你吧。" />
     <title>情人節網路告白大行動</title>
@@ -316,13 +316,13 @@
 
                 if (response.authResponse) {
 
-                    console.log('Welcome!  Fetching your information.... ');
+                    // console.log('Welcome!  Fetching your information.... ');
                     //console.log(response); // dump complete info
                     access_token = response.authResponse.accessToken; //get access token
                     user_id = response.authResponse.userID; //get FB UID
 
                     FB.api('/me', function(response) {
-                        console.log('Successful login for: ' + response.id);
+                        // console.log('Successful login for: ' + response.id);
                         that.name = response.name;
                         that.fbid = response.id;
                         that.display();        
@@ -427,7 +427,7 @@
                 var data = JSON.parse(data);
                 that.id = data.id;
                 var val = document.location.host + '/valentine_card.html?id=' + that.id;
-                console.log(val)
+                // console.log(val)
                 $input.val(val).attr('data-clipboard-text', val);
             });
 
@@ -444,9 +444,8 @@
 
         count: function () {
             $.get("/valentine/api/valentinecount", {}, function(data,status){
-                console.log(data)
+                // console.log(data)
                 data = JSON.parse(data)
-                // data.count = 100; 
                 if(data.count > 0) {
                     $('#num').text(data.count);
 
