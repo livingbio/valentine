@@ -190,7 +190,7 @@
                     <li><span class="index"></span>活動期間：即日起到情人節當天為止 (2/14/2015)。</li>
                     <li><span class="index" style="background-position-y:135px;"></span>活動要求：要特別告訴告白對象，點短網址的時候要在桌機上喔，目前活動並不支援行動裝置。</li>
                     <li><span class="index" style="background-position-y:35px;"></span>特別提示：如果想要傳給多個對象，每次都要產生新的網址喔，要不然後果可能會難以想像。</li>
-                    <li><span class="index" style="background-position-y:19px;top: 5px;"></span>此活動由塔圖科技贊助，塔圖科技是一間提供精准廣告投遞的廣告技術公司，如果想了解更多關於廣告投放資訊，請造訪 <a href="http://www.tagtoo.com.tw">塔圖官方網站</a>。</li>
+                    <li><span class="index" style="background-position-y:19px;top: 5px;"></span>此活動由塔圖科技贊助，塔圖科技是一間提供精准廣告投遞的廣告技術公司，如果想了解更多關於廣告投放資訊，請造訪 <a id="tagtoo_website" href="http://www.tagtoo.com.tw" target="_blank">塔圖官方網站</a>。</li>
                 </ul>
                 <div class="fb-like-box" data-href="https://www.facebook.com/TagtooFans" data-width="700" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
         
@@ -230,7 +230,7 @@
                 </div>
                 <div class="flow-wraper">
                     <div class="login">
-                        <div id="login" class="ui facebook button massive" onclick="VALENTINE.login();">
+                        <div id="login" class="ui facebook button massive" onclick="VALENTINE.login();ga('send', 'event', 'button', 'click', 'login');">
                             <i class="facebook icon"></i> 大聲告白
                         </div>
                     </div>
@@ -292,12 +292,24 @@
     </div>
     
     <div class="bottom">
-        <p>© 2015 <a href="http://www.tagtoo.com.tw/" style="margin: 5px;">Tagtoo 塔圖科技</a> All copyright <a href="http://www.tagtoo.com.tw/privacy" style="margin: 5px;">隱私權政策</a></p>
+        <p>© 2015 <a id="footer_tagtoo_website" href="http://www.tagtoo.com.tw/" target="_blank" style="margin: 5px;">Tagtoo 塔圖科技</a> All copyright <a id="footer_tagtoo_privacy" href="http://www.tagtoo.com.tw/privacy" target="_blank" style="margin: 5px;">隱私權政策</a></p>
     </div>
+
 
     <script src="/valentine_static/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
     <script src="/valentine_static/ZeroClipboard.js"></script>
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K3RG5R"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K3RG5R');</script>
+
+    <!-- End Google Tag Manager -->
     <script type="text/javascript"> 
     var VALENTINE = {
         num: 0,
@@ -473,6 +485,15 @@
     var tagtoo_s = document.getElementsByTagName('script')[0];
     tagtoo_s.parentNode.insertBefore(tagtoo_ga, tagtoo_s);
 
+    if (typeof TagtooTagManager == "undefined") {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','TagtoodataLayer','GTM-MHN67X'); 
+        TagtooTagManager = true;
+    };
+
     window.fbAsyncInit = function() {
         FB.init({
             appId: '776675399034344',
@@ -521,17 +542,17 @@
           // alert( "ZeroClipboard SWF is ready!" );
 
             client.on( "copy", function (event) {
-              var clipboard = event.clipboardData;
-              var val = document.location.host + '/valentine_card.html?id=' + VALENTINE.id;
-              clipboard.setData("text/plain", val);
+                var clipboard = event.clipboardData;
+                var val = document.location.host + '/valentine_card.html?id=' + VALENTINE.id;
+                clipboard.setData("text/plain", val);
             });
 
-          client.on( "aftercopy", function( event ) {
-            // `this` === `client`
-            // `event.target` === the element that was clicked
-            // event.target.style.display = "none";  
-            alert("Copied text to clipboard: " + event.data["text/plain"] );
-          } );
+            client.on( "aftercopy", function( event ) {
+                // `this` === `client`
+                // `event.target` === the element that was clicked
+                // event.target.style.display = "none";  
+                alert("Copied text to clipboard: " + event.data["text/plain"] );
+            } );
         } );
     });
     </script>
