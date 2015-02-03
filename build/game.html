@@ -20,7 +20,7 @@
         width: 80%;
         margin: 0 auto;
         box-shadow: 0 0 0 0;
-        height: 100%;
+        /*height: 100%;*/
     }
     .input{
         width: 100%;
@@ -40,27 +40,28 @@
     }
 
     body {
-        background-image: url('http://lh5.ggpht.com/LiPAfqM1Gh8tPkXieRNnbdZLO3NfAf4-WykbHHeH784bgg54wPLAArvR-lkr4gK7GudzEDnd_56sd1PtdDXneA');
+        background-image: url('http://lh4.ggpht.com/9zEQrQDRqWdQjdvTcRXCpjWmwI5mPn5s8QvBojLcgKT2fUdgRIZqhl3ykqZbThJolTyas7-073U1DRlqU84dcg');
+        background-color: #ffffff;
     }
 
     .logo {
-        background-image: url('http://lh4.ggpht.com/BHbINrjedbJUmPHbpvop_4yFbALLYqttydPRldxaG7KAPVbuH-zr8vqnoDe2s-RZVYm7ApeyocDdu1zhLuei');
+        background-image: url('http://lh4.ggpht.com/4dz8ESC5aEfkBDt4qN8U9-2Dm_PKznsi_8rYsGIjgV8feoknE-sMviCVc1AmA_OfbzAKT4vNjkatRa8_MvWd');
         width: 140px;
         height: 117px;
         margin: 50px auto 50px auto;
     }
 
     .top {
-        background-image: url('http://lh4.ggpht.com/MNrKJzB8ZzRLvYEfW3abp02_3zJ5UY2eTqxzI42lv4kpkC7PEh-9hjCUl38tS6v3ngIjLpgU6ZWufZtQMBYPzw');
+        background-image: url('http://lh4.ggpht.com/MNrKJzB8ZzRLvYEfW3abp02_3zJ5UY2eTqxzI42lv4kpkC7PEh-9hjCUl38tS6v3ngIjLpgU6ZWufZtQMBYPzw=h34');
         width: 100%;
-        height: 20px;
+        height: 34px;
     }
 
     .bottom {
         text-align: center;
         widows: 100%;
         height: 50px;
-        background-color: #F8A4A7;
+        background-color: #fababc;
     }
 
     .bottom p {
@@ -117,8 +118,12 @@
         margin: 0 auto;
     }
 
-    #ads iframe {
-        outline: 1px solid;
+    .fb-comments iframe{
+        background-color: #ffffff;
+    }
+
+    #ads {
+        background-color: #fababc;
     }
 
     .sp {
@@ -152,6 +157,16 @@
 
     .title {
         font-size: 16px;
+    }
+
+    .val_tit {
+        color: #ffffff !important;
+        font-size: 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .warper_bottom {
+        background-color: #ffffff;
     }
     </style>
 
@@ -197,31 +212,33 @@
             </div>
           </div>
         </div>
+    </div>
 
-        <div id="ads" class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
-          <div class="ui page grid">
-            <div class="ui horizontal divider">
-                告白廣告示意圖
-            </div>
-            <div class="sixteen wide column">
-                <h2>告白 A 版型</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1669" frameborder="0" width="620" height="150" frameborder="0" scrolling="no"></iframe>
-                
-                <h2>告白 B 版型</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1668" frameborder="0" width="300" height="250" frameborder="0" scrolling="no"></iframe>
-            </div>
-
-            <div class="eight wide column">
-                <h2>告白 C 版型</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1670" frameborder="0" width="120" height="600" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="eight wide column">
-                <h2>告白 D 版型</h2>
-                <iframe src="http://ad.tagtoo.co/ad/show/1671" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
-            </div>
-          </div>
+    <div id="ads" class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;padding: 50px 0;">
+      <div class="ui page grid">
+        <div class="ui horizontal divider val_tit">
+            告白廣告示意圖
+        </div>
+        <div class="sixteen wide column">
+            <h2>告白 A 版型</h2>
+            <iframe src="http://ad.tagtoo.co/ad/show/1669" frameborder="0" width="620" height="150" frameborder="0" scrolling="no"></iframe>
+            
+            <h2>告白 B 版型</h2>
+            <iframe src="http://ad.tagtoo.co/ad/show/1668" frameborder="0" width="300" height="250" frameborder="0" scrolling="no"></iframe>
         </div>
 
+        <div class="eight wide column">
+            <h2>告白 C 版型</h2>
+            <iframe src="http://ad.tagtoo.co/ad/show/1670" frameborder="0" width="120" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="eight wide column">
+            <h2>告白 D 版型</h2>
+            <iframe src="http://ad.tagtoo.co/ad/show/1671" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+        
+    <div class="warper_bottom">
         <div class="ui vertical segment" style="box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;">
           <div class="ui page grid">
             <div class="sixteen wide column">
@@ -308,8 +325,8 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-K3RG5R');</script>
-
     <!-- End Google Tag Manager -->
+
     <script type="text/javascript"> 
     var VALENTINE = {
         num: 0,
@@ -438,7 +455,7 @@
             $.post(this.resourse, obj, function(data,status){
                 var data = JSON.parse(data);
                 that.id = data.id;
-                var val = document.location.host + '/valentine_card.html?id=' + that.id;
+                var val = 'https://' + document.location.host + '/valentine_card.html?id=' + that.id;
                 // console.log(val)
                 $input.val(val).attr('data-clipboard-text', val);
             });
@@ -543,7 +560,7 @@
 
             client.on( "copy", function (event) {
                 var clipboard = event.clipboardData;
-                var val = document.location.host + '/valentine_card.html?id=' + VALENTINE.id;
+                var val = 'https://' + document.location.host + '/valentine_card.html?id=' + VALENTINE.id;
                 clipboard.setData("text/plain", val);
             });
 
@@ -551,7 +568,7 @@
                 // `this` === `client`
                 // `event.target` === the element that was clicked
                 // event.target.style.display = "none";  
-                alert("Copied text to clipboard: " + event.data["text/plain"] );
+                alert("複製成功: " + event.data["text/plain"] );
             } );
         } );
     });
