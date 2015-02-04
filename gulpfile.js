@@ -89,14 +89,14 @@ gulp.task('card-js', function() {
  * 縮短 app.css
  */
 gulp.task('minify-css', function() {
-  gulp.src( paths.css )
+  gulp.src('./dist/static/css/*.css')
     .pipe(minifyCSS(
       {
           noAdvanced: false,
           keepBreaks:true,
           cache: true // 這是 gulp 插件獨有的
       }))
-    .pipe(gulp.dest( paths.destCSS ))
+    .pipe(gulp.dest('./dist/static/css'))
 });
 
 
@@ -134,7 +134,7 @@ gulp.task('watch', function() {
     // console.log( 'watch 跑' );
     
     // gulp.watch( 'app/**/*', ['bundle-js', 'card-js', 'minify-css', 'copy', 'refresh'] );
-    gulp.watch( 'app/**/*', ['templates', 'copy_js'] );
+    gulp.watch( 'app/**/*', ['templates', 'copy_js', 'sass', 'minify-css'] );
 });
 
 /**
@@ -204,4 +204,4 @@ gulp.task('default', ['wilson_dev']);
  * 啟動 8000 server 供本地跑
  */
 gulp.task('dev', ['bundle-js', 'card-js', 'minify-css', 'copy', 'watch'] );
-gulp.task('wilson_dev', ['templates', 'copy_js', 'watch'] );
+gulp.task('wilson_dev', ['templates', 'copy_js', 'sass', 'minify-css', 'watch'] );
