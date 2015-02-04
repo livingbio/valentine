@@ -221,19 +221,19 @@
         </div>
         <div class="sixteen wide column">
             <h2>告白 A 版型</h2>
-            <iframe src="http://ad.tagtoo.co/ad/show/1669" frameborder="0" width="620" height="150" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://ad.tagtoo.co/ad/show/1669" frameborder="0" width="620" height="150" frameborder="0" scrolling="no"></iframe>
             
             <h2>告白 B 版型</h2>
-            <iframe src="http://ad.tagtoo.co/ad/show/1668" frameborder="0" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://ad.tagtoo.co/ad/show/1668" frameborder="0" width="300" height="250" frameborder="0" scrolling="no"></iframe>
         </div>
 
         <div class="eight wide column">
             <h2>告白 C 版型</h2>
-            <iframe src="http://ad.tagtoo.co/ad/show/1670" frameborder="0" width="120" height="600" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://ad.tagtoo.co/ad/show/1670" frameborder="0" width="120" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="eight wide column">
             <h2>告白 D 版型</h2>
-            <iframe src="http://ad.tagtoo.co/ad/show/1671" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://ad.tagtoo.co/ad/show/1671" frameborder="0" width="160" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
       </div>
     </div>
@@ -455,7 +455,7 @@
             $.post(this.resourse, obj, function(data,status){
                 var data = JSON.parse(data);
                 that.id = data.id;
-                var val = 'https://' + document.location.host + '/valentine_card.html?id=' + that.id;
+                var val = 'http://' + document.location.host + '/valentine_card.html?id=' + that.id;
                 // console.log(val)
                 $input.val(val).attr('data-clipboard-text', val);
             });
