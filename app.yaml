@@ -10,7 +10,7 @@ builtins:
 handlers:
 
 - url: /valentine_static
-  static_dir: build/static
+  static_dir: dist/static
 
 - url: /valentine_semantic
   static_dir: node_modules/semantic-ui/dist
@@ -19,16 +19,16 @@ handlers:
   static_dir: node_modules/Tagtoo_tools/libs
 
 - url: /valentine_game.html
-  static_files: build/game.html
-  upload: build/game.html
+  static_files: dist/game.html
+  upload: dist/game.html
 
 - url: /valentine_card.html
-  static_files: build/card.html
-  upload: build/card.html
+  static_files: dist/card.html
+  upload: dist/card.html
 
 - url: /valentine_get.html
-  static_files: build/get.html
-  upload: build/get.html
+  static_files: dist/get.html
+  upload: dist/get.html
 
 - url: .*
   script: main.app

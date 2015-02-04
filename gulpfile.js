@@ -112,13 +112,29 @@ gulp.task('copy', function(){
 })
 
 
+// base 指從哪個 folder 開始複製
+gulp.task('copy_js', function(){
+    return gulp.src([ 
+        'app/assets/js/*.{js,swf}',
+    ], { base: 'app/assets/js' } )
+    .pipe( gulp.dest('./dist/static'));
+})
+
+var uglify = require('gulp-uglify');
+ 
+gulp.task('compress', function() {
+  gulp.src('dist/static/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/static'))
+});
 /**
  * 監控 app/ 下所有 js, jsx, html, css 變化就重新編譯
  */
 gulp.task('watch', function() {
     // console.log( 'watch 跑' );
     
-    gulp.watch( 'app/**/*', ['bundle-js', 'card-js', 'minify-css', 'copy', 'refresh'] );
+    // gulp.watch( 'app/**/*', ['bundle-js', 'card-js', 'minify-css', 'copy', 'refresh'] );
+    gulp.watch( 'app/**/*', ['templates', 'copy_js'] );
 });
 
 /**
@@ -132,6 +148,46 @@ gulp.task( 'refresh', function(){
 })
 
 
+var jade = require('gulp-jade');
+ 
+gulp.task('templates', function() {
+  var YOUR_LOCALS = {};
+ 
+    gulp.src('./app/*.jade')
+    .pipe(jade({
+      locals: YOUR_LOCALS,
+      pretty: true
+    }))
+    .pipe(gulp.dest('./dist/'))
+});
+
+
+// var sass = require('gulp-sass');
+
+// gulp.task('sass', function () {
+//     gulp.src('./scss/*.scss')
+//         .pipe(sass())
+//         .pipe(gulp.dest('./css'));
+// });
+
+var sass = require('gulp-ruby-sass');
+ 
+gulp.task('sass', function() {
+    return sass('app/assets/sass') 
+    .on('error', function (err) {
+      console.error('Error!', err.message);
+    })
+    .pipe(gulp.dest('./dist/static/css'));
+});
+
+// var compass = require('gulp-compass');
+ 
+// gulp.task('compass', function() {
+//   gulp.src('./app/assets/sass/*.sass')
+//     .pipe(compass({
+//     }))
+//     .pipe(gulp.dest('./dist/static'));
+// });
 //========================================================================
 //
 // 總成的指令集
@@ -140,7 +196,7 @@ gulp.task( 'refresh', function(){
 /**
  * 初期讓 default 就是跑 dev task，將來可能會改成有 build, deploy 等花樣
  */
-gulp.task('default', ['dev']);
+gulp.task('default', ['wilson_dev']);
 
 /**
  * 編譯與打包 jsx 為一張檔案
@@ -148,3 +204,4 @@ gulp.task('default', ['dev']);
  * 啟動 8000 server 供本地跑
  */
 gulp.task('dev', ['bundle-js', 'card-js', 'minify-css', 'copy', 'watch'] );
+gulp.task('wilson_dev', ['templates', 'copy_js', 'watch'] );
