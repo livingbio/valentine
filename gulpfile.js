@@ -134,7 +134,7 @@ gulp.task('watch', function() {
     // console.log( 'watch 跑' );
     
     // gulp.watch( 'app/**/*', ['bundle-js', 'card-js', 'minify-css', 'copy', 'refresh'] );
-    gulp.watch( 'app/**/*', ['templates', 'copy_js', 'sass', 'minify-css'] );
+    gulp.watch( 'app/**/*', ['templates', 'copy_js', 'sass', 'minify-css', 'refresh'] );
 });
 
 /**

@@ -7,6 +7,12 @@
   width: 100%;
   margin: 2em 0; }
 
+.login {
+  text-align: center; }
+
+.flow {
+  display: none; }
+
 .flow .steps {
   width: 100%; }
 
@@ -44,6 +50,7 @@ body {
   color: #000000; }
 
 ul {
+  list-style-type: none;
   padding: 0;
   font-size: 15px; }
 
@@ -58,6 +65,10 @@ h2 {
 iframe {
   margin: 0 auto;
   display: block; }
+
+#msg .msg,
+#link .link {
+  display: none; }
 
 .flow-wraper {
   max-width: 600px;
