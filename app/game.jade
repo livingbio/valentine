@@ -5,6 +5,7 @@ block css
   
 block js
   script(src='/valentine_static/ZeroClipboard.js')
+  script(src='/valentine_static/valentine.js')
   script(src='/valentine_static/game.js')
 
 block content
@@ -78,7 +79,7 @@ block content
           .ui.horizontal.divider start
           .flow-wraper
             .login
-              #login.ui.facebook.button.massive(onclick="VALENTINE.login();ga('send', 'event', 'button', 'click', 'login');")
+              #login.ui.facebook.button.massive
                 i.facebook.icon
                 |  大聲告白
             #flow.flow

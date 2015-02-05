@@ -15,6 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
     <script src="//ad.tagtoo.co/static/ad/js/cookie.js"></script>
     <script src="//ad.tagtoo.co/static/ad/js/core.js"></script>
+    <script src="/valentine_static/valentine.js"></script>
     <script src="/valentine_static/card.js"></script>
     <noscript>
       <iframe src="//www.googletagmanager.com/ns.html?id=GTM-K3RG5R" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -25,6 +26,37 @@
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-K3RG5R');
+      
+    </script>
+    <script>
+      var tagtoo_advertiser_id = 251;
+      var tagtoo_ga = document.createElement('script');
+      tagtoo_ga.type = 'text/javascript';
+      tagtoo_ga.async = true;
+      tagtoo_ga.src = '//ad.tagtoo.co/media/ad/track.js';
+      var tagtoo_s = document.getElementsByTagName('script')[0];
+      tagtoo_s.parentNode.insertBefore(tagtoo_ga, tagtoo_s);
+      
+      window.fbAsyncInit = function() {
+          FB.init({
+              appId: '776675399034344',
+              cookie: true, // enable cookies to allow the server to access 
+              // the session
+              xfbml: true, // parse social plugins on this page
+              version: 'v2.1' // use version 2.1
+          });
+      };
+      
+      // Load the SDK asynchronously
+      (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
       
     </script>
   </head>
@@ -79,7 +111,7 @@
       <div>TOP <span class="arrow"></span></div>
     </div>
     <div class="bottom">
-      <p>&copy; 2015 <a id="footer_tagtoo_website" href="http://www.tagtoo.com.tw/" style="margin: 5px;">Tagtoo 塔圖科技</a> All copyright <a id="footer_tagtoo_privacy" href="http://www.tagtoo.com.tw/privacy" style="margin: 5px;">隱私權政策</a></p>
+      <p>&copy; 2015 <a id="footer_tagtoo_website" href="http://www.tagtoo.com.tw/" target="_blank" style="margin: 5px;">Tagtoo 塔圖科技</a> All copyright <a id="footer_tagtoo_privacy" href="http://www.tagtoo.com.tw/privacy" target="_blank" style="margin: 5px;">隱私權政策</a></p>
     </div>
   </body>
 </html>

@@ -1,33 +1,150 @@
-#wraper{width:80%;margin:0 auto;box-shadow:0 0}
-.input{width:100%;margin:2em 0}
-.login{text-align:center}
-.flow{display:none}
-.flow .steps{width:100%}
-body{background-image:url(http://lh4.ggpht.com/9zEQrQDRqWdQjdvTcRXCpjWmwI5mPn5s8QvBojLcgKT2fUdgRIZqhl3ykqZbThJolTyas7-073U1DRlqU84dcg);background-color:#fff}
-.logo{background-image:url(http://lh4.ggpht.com/4dz8ESC5aEfkBDt4qN8U9-2Dm_PKznsi_8rYsGIjgV8feoknE-sMviCVc1AmA_OfbzAKT4vNjkatRa8_MvWd);width:140px;height:117px;margin:50px auto}
-.top{background-image:url(http://lh4.ggpht.com/MNrKJzB8ZzRLvYEfW3abp02_3zJ5UY2eTqxzI42lv4kpkC7PEh-9hjCUl38tS6v3ngIjLpgU6ZWufZtQMBYPzw=h34);width:100%;height:34px}
-.bottom{text-align:center;widows:100%;height:50px;background-color:#fababc}
-.bottom p{line-height:50px;font-size:12px;color:#fff}
-.bottom a{color:#545454;cursor:pointer}
-.bottom a:hover{color:#000}
-ul{list-style-type:none;padding:0;font-size:15px}
-p{color:#BA8A68}
-h2{text-align:center}
-iframe{margin:0 auto;display:block}
-p{font-size:25px;line-height:40px}
-.flow-wraper{margin:50px}
-.delete_ad{position:relative;top:-2px;left:10px}
-img{width:100%}
-.emitter,.receiver{font-size:30px;color:#5F5F5F;margin:0 10px}
-.emitter:hover{color:#2A2A2A}
-.d{background-image:url(http://lh6.ggpht.com/zq0TENaZmYeU8_RMSnwbH7cZjQW9zTxWgvupBwP3RFJRna0BOVl1XcUpZBidhGS9dC7WpQHnDRE4DFRgSsBGDQ);background-size:100%;height:358px;background-repeat:no-repeat}
-.d div{margin:75px 50px 40px}
-.aimg{margin-bottom:100px}
-.aimg h2{margin-bottom:30px}
-#ads{background-color:#fababc}
-.arrow{background-image:url(http://lh4.ggpht.com/tkiBGJGSt00KI_1Yaolmw8NApoZGZm869OkXDXxfKkaWUHDkK6rqtf67AAKPEI8oNI_iKtVfqBJtrY_6CDu5IPM);width:19px;height:26px;display:block;position:relative;top:-38px;left:46px}
-.scrollTop{height:50px;line-height:50px;font-size:20px;background-color:#fff;color:#FBCCCD;cursor:pointer}
-.scrollTop div{width:41px;margin:auto}
-.val_tit{color:#fff!important;font-size:25px!important;margin-top:40px!important}
-.link_font{color:#333}
-.link_font:hover{color:#000}
+#wraper {
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 0 0 0; }
+
+.input {
+  width: 100%;
+  margin: 2em 0; }
+
+.login {
+  text-align: center; }
+
+.flow {
+  display: none; }
+
+.flow .steps {
+  width: 100%; }
+
+body {
+  background-image: url("http://lh4.ggpht.com/9zEQrQDRqWdQjdvTcRXCpjWmwI5mPn5s8QvBojLcgKT2fUdgRIZqhl3ykqZbThJolTyas7-073U1DRlqU84dcg");
+  background-color: #ffffff; }
+
+.logo {
+  background-image: url("http://lh4.ggpht.com/4dz8ESC5aEfkBDt4qN8U9-2Dm_PKznsi_8rYsGIjgV8feoknE-sMviCVc1AmA_OfbzAKT4vNjkatRa8_MvWd");
+  width: 140px;
+  height: 117px;
+  margin: 50px auto 50px auto; }
+
+.top {
+  background-image: url("http://lh4.ggpht.com/MNrKJzB8ZzRLvYEfW3abp02_3zJ5UY2eTqxzI42lv4kpkC7PEh-9hjCUl38tS6v3ngIjLpgU6ZWufZtQMBYPzw=h34");
+  width: 100%;
+  height: 34px; }
+
+.bottom {
+  text-align: center;
+  widows: 100%;
+  height: 50px;
+  background-color: #fababc; }
+
+.bottom p {
+  line-height: 50px;
+  font-size: 12px;
+  color: #ffffff; }
+
+.bottom a {
+  color: #545454;
+  cursor: pointer; }
+
+.bottom a:hover {
+  color: #000000; }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 15px; }
+
+p {
+  font-size: 20px;
+  color: #BA8A68;
+  line-height: 30px; }
+
+h2 {
+  text-align: center; }
+
+iframe {
+  margin: 0 auto;
+  display: block; }
+
+p {
+  font-size: 25px;
+  line-height: 40px; }
+
+.flow-wraper {
+  margin: 50px; }
+
+.delete_ad {
+  position: relative;
+  top: -2px;
+  left: 10px; }
+
+img {
+  width: 100%; }
+
+.receiver {
+  font-size: 30px;
+  color: #5F5F5F;
+  margin: 0 10px; }
+
+.emitter {
+  font-size: 30px;
+  color: #5F5F5F;
+  margin: 0 10px; }
+
+.emitter:hover {
+  color: #2A2A2A; }
+
+.d {
+  background-image: url("http://lh6.ggpht.com/zq0TENaZmYeU8_RMSnwbH7cZjQW9zTxWgvupBwP3RFJRna0BOVl1XcUpZBidhGS9dC7WpQHnDRE4DFRgSsBGDQ");
+  background-size: 100%;
+  height: 358px;
+  background-repeat: no-repeat; }
+
+.d div {
+  margin: 75px 50px 40px 50px; }
+
+.aimg {
+  margin-bottom: 100px; }
+
+.aimg h2 {
+  margin-bottom: 30px; }
+
+#ads {
+  background-color: #fababc; }
+
+.arrow {
+  background-image: url("http://lh4.ggpht.com/tkiBGJGSt00KI_1Yaolmw8NApoZGZm869OkXDXxfKkaWUHDkK6rqtf67AAKPEI8oNI_iKtVfqBJtrY_6CDu5IPM");
+  width: 19px;
+  height: 26px;
+  display: block;
+  position: relative;
+  top: -38px;
+  left: 46px; }
+
+.scrollTop {
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  background-color: #ffffff;
+  color: #FBCCCD;
+  cursor: pointer; }
+
+.scrollTop div {
+  width: 41px;
+  margin: auto; }
+
+.val_tit {
+  color: #ffffff !important;
+  font-size: 25px !important;
+  margin-top: 40px !important; }
+
+.link_font {
+  color: #333333; }
+
+.link_font:hover {
+  color: #000000; }
+
+/* Smartphones (landscape) ----------- */
+/* Styles */
+/* Smartphones (portrait) ----------- */
+/* Styles */

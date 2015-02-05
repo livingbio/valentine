@@ -14,6 +14,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.js"></script>
     <script src="/valentine_static/ZeroClipboard.js"></script>
+    <script src="/valentine_static/valentine.js"></script>
     <script src="/valentine_static/game.js"></script>
     <noscript>
       <iframe src="//www.googletagmanager.com/ns.html?id=GTM-K3RG5R" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -24,6 +25,37 @@
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-K3RG5R');
+      
+    </script>
+    <script>
+      var tagtoo_advertiser_id = 251;
+      var tagtoo_ga = document.createElement('script');
+      tagtoo_ga.type = 'text/javascript';
+      tagtoo_ga.async = true;
+      tagtoo_ga.src = '//ad.tagtoo.co/media/ad/track.js';
+      var tagtoo_s = document.getElementsByTagName('script')[0];
+      tagtoo_s.parentNode.insertBefore(tagtoo_ga, tagtoo_s);
+      
+      window.fbAsyncInit = function() {
+          FB.init({
+              appId: '776675399034344',
+              cookie: true, // enable cookies to allow the server to access 
+              // the session
+              xfbml: true, // parse social plugins on this page
+              version: 'v2.1' // use version 2.1
+          });
+      };
+      
+      // Load the SDK asynchronously
+      (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
       
     </script>
   </head>
@@ -86,7 +118,7 @@
             <div class="ui horizontal divider">start</div>
             <div class="flow-wraper">
               <div class="login">
-                <div id="login" onclick="VALENTINE.login();ga('send', 'event', 'button', 'click', 'login');" class="ui facebook button massive"><i class="facebook icon"></i> 大聲告白</div>
+                <div id="login" class="ui facebook button massive"><i class="facebook icon"></i> 大聲告白</div>
               </div>
               <div id="flow" class="flow">
                 <div class="ui ordered steps">

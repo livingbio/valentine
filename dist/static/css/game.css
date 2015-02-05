@@ -66,8 +66,8 @@ iframe {
   margin: 0 auto;
   display: block; }
 
-#msg .msg,
-#link .link {
+#msg.msg,
+#link.link {
   display: none; }
 
 .flow-wraper {
