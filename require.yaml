@@ -1,6 +1,6 @@
 handlers:
 - url: /valentine_static
-  static_dir: valentine/build/static
+  static_dir: valentine/dist/static
 
 - url: /valentine_semantic
   static_dir: valentine/node_modules/semantic-ui/dist
@@ -10,15 +10,15 @@ handlers:
 
 - url: /valentine_game.html
   static_files: valentine/build/game.html
-  upload: valentine/build/game.html
+  upload: valentine/dist/game.html
 
 - url: /valentine_card.html
   static_files: valentine/build/card.html
-  upload: valentine/build/card.html
+  upload: valentine/dist/card.html
 
 - url: /valentine_get.html
   static_files: valentine/build/get.html
-  upload: valentine/build/get.html
+  upload: valentine/dist/get.html
 
 - url: /valentine/.*
   script: valentine.main.app
