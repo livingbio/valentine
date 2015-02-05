@@ -1,0 +1,84 @@
+extends ./component/layout.jade
+
+block css
+  link(rel='stylesheet', type='text/css', href='/valentine_static/css/card.css')
+
+block js
+  script(src='//ad.tagtoo.co/static/ad/js/cookie.js')
+  script(src='//ad.tagtoo.co/static/ad/js/core.js')
+  script(src='/valentine_static/valentine.js')
+  script(src='/valentine_static/card.js')
+
+block content
+  .top
+  #wraper.ui.compact.segment
+    .logo
+    .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+      .ui.page.grid(style='text-align: center;')
+        .column.d(style='max-width: 700px;')
+          div
+            p
+              | Hello =)
+              span#receiver.receiver
+              |  你收到了
+              a#emitter-a(href='')
+                span#emitter.emitter
+              |  送你的一段情人節秘密告白，你可以到以下幾個網站去逛逛看有什麼驚喜內容唷。
+            #go_activity.ui.facebook.button(style='margin: 0 auto;display: block;width: 213px;')
+              | 現在馬上大聲說愛
+              i.pointing.right.icon
+
+    .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+      .ui.page.grid(style='text-align: center;')
+        .sixteen.wide.column(style='max-width: 700px;')
+          h3 &#x5099;&#x8A3B;&#xFF1A;
+          ul
+            li 1. 此活動並不支援行動裝置，建議使用電腦去尋找妳(你)的神秘告白內容唷。
+            |                     
+            li 2. 這是專屬於妳(你)的秘秘告白只有在這台電腦上才看的到，廣告將會投放到2/14情人節當天為止。
+            |                     
+            li 3. 如果看不到廣告須先確認停止阻擋廣告軟體才能進行遊戲。
+          span 如果妳(你)不想再看到廣告，請
+          #delete_ad.negative.ui.button.delete_ad 點選我不想看到告白留言
+
+  #ads.ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+    .ui.page.grid
+      .ui.horizontal.divider.val_tit(style='font-size: 20px;')
+        | 告白廣告示意圖
+      .sixteen.wide.column
+        .aimg
+          h2
+            | 1. 
+            a#udn_font.link_font(href='http://udn.com/news/index', target='_blank') 聯合新聞網
+          a#udn_img(href='http://udn.com/news/story/7157/658260', target='_blank')
+            img(src='http://lh6.ggpht.com/HqX6MrFn7P8kIlOXnn02jnjc7aymRza6C3hyURZdHlKTWCiP621khpmuYI-6CcY4kWRRB80vZngXQMr5toQPrQc=w1000', alt='')
+        .aimg
+          h2
+            | 2. 
+            a#nownews_font.link_font(href='http://www.nownews.com/', target='_blank') 今日新聞
+
+          a#nownews_img.aimg(href='http://www.nownews.com/n/2015/01/17/1578435', target='_blank')
+            img(src='http://lh6.ggpht.com/GYSKDtQvHSil0yDelj911kMdBOa-l8olljRgQOcOh8R_AdIzqjt9OdDfw0Db6j8eEoJzg-bimJ0l905jtPCTdg=w1000', alt='')
+        .aimg
+          h2
+            | 3. 
+            a#chinatimes_font.link_font(href='http://www.chinatimes.com/newspapers/2601', target='_blank') 中時電子報
+
+          a#chinatimes_img.aimg(href='http://www.chinatimes.com/realtimenews/20150123004467-260410', target='_blank')
+            img(src='http://lh6.ggpht.com/rM_wSaUeCI29eZXazmZ-V-HTLv2Quus71Ecg9yExZXlwSI2rhw6EgQB1OPaLZ52MlNBBeb_0coOuULc8AGZUig=w1000', alt='')
+        .aimg
+          h2
+            | 4. 
+            a#ltn_font.link_font(href='http://www.ltn.com.tw/', target='_blank') 自由時報電子報
+
+          a#ltn_img.aimg(href='http://news.ltn.com.tw/news/entertainment/breakingnews/1215389', target='_blank')
+            img(src='http://lh4.ggpht.com/Q1AZ57xpWx7WmYpjoo1yqoPDTDAj45Qi8bCEYsAZXaGms7tri91dUYYyYaXMcuyP7BvUgD5dAmNE5WUoXtdLtA=w1000', alt='')
+
+  #scrollTop.scrollTop
+    div
+      | TOP 
+      span.arrow
+
+  include ./component/footer.jade
+
+

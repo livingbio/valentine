@@ -1,0 +1,118 @@
+extends ./component/layout.jade
+
+block css
+  link(rel='stylesheet', type='text/css', href='/valentine_static/css/game.css')
+  
+block js
+  script(src='/valentine_static/ZeroClipboard.js')
+  script(src='/valentine_static/valentine.js')
+  script(src='/valentine_static/game.js')
+
+block content
+  .ui.inline.cookie.nag(style='position:fixed;border-radius:0px;')
+    span.title
+      | 目前已有 
+      span#num
+      |  個人告白成功!!! 快來告白吧~~
+
+  .top
+
+  #wraper.ui.compact.segment
+    .logo
+    .fb-share-button(data-href='http://ad.tagtoo.co/valentine_game.html', data-layout='box_count')
+    .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+      .ui.page.grid
+        .column
+          h2.ui.inverted.header Full Width Heading
+          p
+            | 情人節要到了，每個人心中一定有個
+            class.sp(style='margin:10px;') 特別
+            | 的人。
+          p(style='text-align:justify')
+            | 如果你有段話想對她(他)說，但又不知道如何開口，讓我們來幫你吧。只要依照以下步驟，先登入臉書帳號，再輸入告白對象暱稱，並寫下一段你想對她說的話，系統會自動產出一個短網址。
+          p 你只要把產出網址丟給你想要告白的對象，我們就會把你的告白內容做成「網路廣告」並投放給你的告白對象！
+          p
+            span.sp 重點是
+            | 這段秘密對話，只有點連結的那個人看的到，其他人是看不到的喔。適用對象：不管是暗戀、單戀、情人、男男、女女、還是老夫老妻，只要你想給某人一個不一樣的情人節禮物，都可以免費參加遊戲。
+
+    .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+      .ui.page.grid
+        .sixteen.wide.column
+          ul.list
+            li
+              span.index
+              | 活動期間：即日起到情人節當天為止 (2/14/2015)。
+            li
+              span.index(style='background-position-y:135px;')
+              | 活動要求：要特別告訴告白對象，點短網址的時候要在桌機上喔，目前活動並不支援行動裝置。
+            li
+              span.index(style='background-position-y:35px;')
+              | 特別提示：如果想要傳給多個對象，每次都要產生新的網址喔，要不然後果可能會難以想像。
+            li
+              span.index(style='background-position-y:19px;top: 5px;')
+              | 此活動由塔圖科技贊助，塔圖科技是一間提供精准廣告投遞的廣告技術公司，如果想了解更多關於廣告投放資訊，請造訪
+              a#tagtoo_website(href='http://www.tagtoo.com.tw', target='_blank') 塔圖官方網站
+              | 。
+          .fb-like-box(data-href='https://www.facebook.com/TagtooFans', data-width='700', data-colorscheme='light', data-show-faces='true', data-header='false', data-stream='false', data-show-border='false')
+
+  #ads.ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;padding: 50px 0;')
+    .ui.page.grid
+      .ui.horizontal.divider.val_tit
+        | 告白廣告示意圖
+      .sixteen.wide.column
+        h2 告白 A 版型
+        iframe(src='http://ad.tagtoo.co/ad/show/1669', frameborder='0', width='620', height='150', scrolling='no')
+        h2 告白 B 版型
+        iframe(src='http://ad.tagtoo.co/ad/show/1668', frameborder='0', width='300', height='250', scrolling='no')
+
+      .eight.wide.column
+        h2 告白 C 版型
+        iframe(src='http://ad.tagtoo.co/ad/show/1670', frameborder='0', width='120', height='600', scrolling='no')
+      .eight.wide.column
+        h2 告白 D 版型
+        iframe(src='http://ad.tagtoo.co/ad/show/1671', frameborder='0', width='160', height='600', scrolling='no')
+  
+  .warper_bottom
+    .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+      .ui.page.grid
+        .sixteen.wide.column
+          .ui.horizontal.divider start
+          .flow-wraper
+            .login
+              #login.ui.facebook.button.massive
+                i.facebook.icon
+                |  大聲告白
+            #flow.flow
+              .ui.ordered.steps
+                #step1.active.step
+                  .content
+                    .title 對誰告白
+                    .description 輸入你想要告白的對象
+                #step2.disabled.step
+                  .content
+                    .title 告白吧
+                    .description 輸入你想要告白的內容
+                #step3.disabled.step
+                  .content
+                    .title 恭喜
+                    .description 把連結分享給你的告白對象
+              #name.ui.left.icon.action.input.name
+                i.user.icon
+                input(type='text', placeholder='你要告白的對象名稱')
+                .ui.blue.submit.button 確認
+              #msg.ui.left.icon.action.input.msg
+                i.smile.icon
+                input(type='text', placeholder='你要告白的內容')
+                .ui.blue.submit.button 確認
+              #link.ui.action.input.link
+                input(type='text')
+                #copy-button.ui.blue.submit.button copy
+
+    .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+      .ui.page.grid
+        .sixteen.wide.column
+          .fb-comments(data-href='http://ad.tagtoo.co/valentine_game.html', data-width='600', data-numposts='5', data-colorscheme='light')
+  
+  include ./component/footer.jade
+
+
