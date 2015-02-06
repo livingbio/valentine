@@ -34,7 +34,7 @@ $(function(){
 
         client.on( "copy", function (event) {
             var clipboard = event.clipboardData;
-            var val = 'https://' + document.location.host + '/valentine_card.html?id=' + VALENTINE.id;
+            var val = 'http://' + document.location.host + '/valentine_card.html?id=' + VALENTINE.id;
             clipboard.setData("text/plain", val);
         });
 

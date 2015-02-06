@@ -132,7 +132,7 @@ var VALENTINE = {
         $.post(this.resourse, obj, function(data,status){
             var data = JSON.parse(data);
             that.id = data.id;
-            var val = 'https://' + document.location.host + '/valentine_card.html?id=' + that.id;
+            var val = 'http://' + document.location.host + '/valentine_card.html?id=' + that.id;
             // console.log(val)
             $input.val(val).attr('data-clipboard-text', val);
         });
