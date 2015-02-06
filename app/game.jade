@@ -13,64 +13,70 @@ block content
     span.title
       | 目前已有 
       span#num
-      |  個人告白成功!!! 快來告白吧~~
+      |  個人告白成功啦!!!
 
   .top
 
-  #wraper.ui.compact.segment
-    .logo
-    .fb-share-button(data-href='https://ad.tagtoo.co/valentine_game.html', data-layout='box_count')
-    .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
-      .ui.page.grid
-        .column
-          h2.ui.inverted.header Full Width Heading
-          p
-            | 情人節要到了，每個人心中一定有個
-            class.sp(style='margin:10px;') 特別
-            | 的人。
-          p(style='text-align:justify')
-            | 如果你有段話想對她(他)說，但又不知道如何開口，讓我們來幫你吧。只要依照以下步驟，先登入臉書帳號，再輸入告白對象暱稱，並寫下一段你想對她說的話，系統會自動產出一個短網址。
-          p 你只要把產出網址丟給你想要告白的對象，我們就會把你的告白內容做成「網路廣告」並投放給你的告白對象！
-          p
-            span.sp 重點是
-            | 這段秘密對話，只有點連結的那個人看的到，其他人是看不到的喔。適用對象：不管是暗戀、單戀、情人、男男、女女、還是老夫老妻，只要你想給某人一個不一樣的情人節禮物，都可以免費參加遊戲。
+  #wraper.ui.compact.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;padding: 50px 0;')
+    .ui.page.grid
+        .logo
+        .fbbox
+            .fb-share-button(data-href='https://ad.tagtoo.co/valentine_game.html', data-layout='box_count')
+        .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+          .ui.page.grid
+            .column
+              h2.ui.inverted.header Full Width Heading
+              p
+                | 情人節要到了，每個人心中一定有個
+                class.sp(style='margin:10px;') 特別
+                | 的人。
+              p(style='text-align:justify')
+                | 如果你有段話想對她(他)說，但又不知道如何開口，讓我們來幫你吧。只要依照以下步驟，先登入臉書帳號，再輸入告白對象暱稱，並寫下一段你想對她說的話，系統會自動產出一個短網址。
+              p 你只要把產出網址丟給你想要告白的對象，我們就會把你的告白內容做成「網路廣告」並投放給你的告白對象！
+              p
+                span.sp 重點是
+                | 這段秘密對話，只有點連結的那個人看的到，其他人是看不到的喔。適用對象：不管是暗戀、單戀、情人、男男、女女、還是老夫老妻，只要你想給某人一個不一樣的情人節禮物，都可以免費參加遊戲。
 
-    .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
-      .ui.page.grid
-        .sixteen.wide.column
-          ul.list
-            li
-              span.index
-              | 活動期間：即日起到情人節當天為止 (2/14/2015)。
-            li
-              span.index(style='background-position-y:135px;')
-              | 活動要求：要特別告訴告白對象，點短網址的時候要在桌機上喔，目前活動並不支援行動裝置。
-            li
-              span.index(style='background-position-y:35px;')
-              | 特別提示：如果想要傳給多個對象，每次都要產生新的網址喔，要不然後果可能會難以想像。
-            li
-              span.index(style='background-position-y:19px;top: 5px;')
-              | 此活動由塔圖科技贊助，塔圖科技是一間提供精准廣告投遞的廣告技術公司，如果想了解更多關於廣告投放資訊，請造訪
-              a#tagtoo_website(href='http://www.tagtoo.com.tw', target='_blank') 塔圖官方網站
-              | 。
-          .fb-like-box(data-href='https://www.facebook.com/TagtooFans', data-width='700', data-colorscheme='light', data-show-faces='true', data-header='false', data-stream='false', data-show-border='false')
+        .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
+          .ui.page.grid
+            .sixteen.wide.column
+              ul.list
+                li
+                  span.index
+                  | 活動期間：即日起到情人節當天為止 (2/14/2015)。
+                li
+                  span.index(style='background-position-y:135px;')
+                  | 活動要求：要特別告訴告白對象，點短網址的時候要在桌機上喔，目前活動並不支援行動裝置。
+                li
+                  span.index(style='background-position-y:35px;')
+                  | 特別提示：如果想要傳給多個對象，每次都要產生新的網址喔，要不然後果可能會難以想像。
+                li
+                  span.index(style='background-position-y:19px;top: 5px;')
+                  | 此活動由塔圖科技贊助，塔圖科技是一間提供精准廣告投遞的廣告技術公司，如果想了解更多關於廣告投放資訊，請造訪
+                  a#tagtoo_website(href='http://www.tagtoo.com.tw', target='_blank') 塔圖官方網站
+                  | 。
+              .fb-like-box(data-href='https://www.facebook.com/TagtooFans', data-width='550', data-colorscheme='light', data-show-faces='true', data-header='false', data-stream='false', data-show-border='false')
 
   #ads.ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;padding: 50px 0;')
     .ui.page.grid
       .ui.horizontal.divider.val_tit
         | 告白廣告示意圖
       .sixteen.wide.column
-        h2 告白 A 版型
-        iframe(src='https://ad.tagtoo.co/ad/show/1669', frameborder='0', width='620', height='150', scrolling='no')
-        h2 告白 B 版型
-        iframe(src='https://ad.tagtoo.co/ad/show/1668', frameborder='0', width='300', height='250', scrolling='no')
+        .campaign_wrap.campaignA
+            h2 告白版型 Style1
+            iframe(src='https://ad.tagtoo.co/ad/show/1669', frameborder='0', width='620', height='150', scrolling='no')
+        .campaign_wrap.campaignB
+            h2 告白版型 Style2
+            iframe(src='https://ad.tagtoo.co/ad/show/1668', frameborder='0', width='300', height='250', scrolling='no')
 
       .eight.wide.column
-        h2 告白 C 版型
-        iframe(src='https://ad.tagtoo.co/ad/show/1670', frameborder='0', width='120', height='600', scrolling='no')
+        .campaign_wrap.campaignC
+            h2 告白版型 Style3
+            iframe(src='https://ad.tagtoo.co/ad/show/1670', frameborder='0', width='120', height='600', scrolling='no')
       .eight.wide.column
-        h2 告白 D 版型
-        iframe(src='https://ad.tagtoo.co/ad/show/1671', frameborder='0', width='160', height='600', scrolling='no')
+        .campaign_wrap.campaignD
+            h2 告白版型 Style4
+            iframe(src='https://ad.tagtoo.co/ad/show/1671', frameborder='0', width='160', height='600', scrolling='no')
   
   .warper_bottom
     .ui.vertical.segment(style='box-shadow: 0 0px 0 rgba(39,41,43,.15) inset;')
